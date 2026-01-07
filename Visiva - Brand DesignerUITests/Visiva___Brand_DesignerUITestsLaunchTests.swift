@@ -1,8 +1,8 @@
-//___FILEHEADER___
+// UI Tests Launch Tests for Visiva - Brand Designer
 
 import XCTest
 
-final class ___FILEBASENAMEASIDENTIFIER___: XCTestCase {
+final class Visiva_Brand_DesignerUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

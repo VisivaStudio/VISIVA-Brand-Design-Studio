@@ -1,0 +1,67 @@
+{
+  "buildCommand" : {
+    "command" : "prepareForIndexing",
+    "enableIndexBuildArena" : false,
+    "targets" : null
+  },
+  "configuredTargets" : [
+    {
+      "guid" : "0f92c8fe0033aac9410b0b2c9bd4ed2cf9f18c8670f812486e11661a66149096"
+    },
+    {
+      "guid" : "0f92c8fe0033aac9410b0b2c9bd4ed2c8d68554cfbb887517ab5adfac235ad4d"
+    },
+    {
+      "guid" : "0f92c8fe0033aac9410b0b2c9bd4ed2ce4f83918d81012b354a4f855764d72d9"
+    }
+  ],
+  "containerPath" : "/Users/Visiva/Desktop/Visiva - Brand Designer/Visiva - Brand Designer.xcodeproj",
+  "continueBuildingAfterErrors" : true,
+  "dependencyScope" : "workspace",
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "build",
+    "activeArchitecture" : "arm64",
+    "activeRunDestination" : {
+      "disableOnlyActiveArch" : false,
+      "platform" : "macosx",
+      "sdk" : "macosx26.2",
+      "sdkVariant" : "macos",
+      "supportedArchitectures" : [
+        "arm64e",
+        "arm64",
+        "x86_64"
+      ],
+      "targetArchitecture" : "arm64"
+    },
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "",
+      "buildProductsPath" : "",
+      "derivedDataPath" : "/Users/Visiva/Library/Developer/Xcode/DerivedData",
+      "indexDataStoreFolderPath" : "/Users/Visiva/Library/Developer/Xcode/DerivedData/Visiva_-_Brand_Designer-bdotxwxmurcbptbrvyenjcbtjrep/Index.noindex/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/Visiva/Library/Developer/Xcode/DerivedData/Visiva_-_Brand_Designer-bdotxwxmurcbptbrvyenjcbtjrep/Index.noindex/PrecompiledHeaders",
+      "pchPath" : ""
+    },
+    "configurationName" : "Release",
+    "overrides" : {
+      "synthesized" : {
+        "table" : {
+          "CLANG_COVERAGE_MAPPING" : "YES",
+          "CLANG_PROFILE_DATA_DIRECTORY" : "/Users/Visiva/Library/Developer/Xcode/DerivedData/Visiva_-_Brand_Designer-bdotxwxmurcbptbrvyenjcbtjrep/CodeCoverage/ProfileData",
+          "ENABLE_PREVIEWS" : "NO",
+          "ENABLE_XOJIT_PREVIEWS" : "YES",
+          "ONLY_ACTIVE_ARCH" : "YES",
+          "TOOLCHAINS" : "com.apple.dt.toolchain.Metal.32023 $(inherited)"
+        }
+      }
+    }
+  },
+  "schemeCommand" : "launch",
+  "showNonLoggedProgress" : true,
+  "useDryRun" : false,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}

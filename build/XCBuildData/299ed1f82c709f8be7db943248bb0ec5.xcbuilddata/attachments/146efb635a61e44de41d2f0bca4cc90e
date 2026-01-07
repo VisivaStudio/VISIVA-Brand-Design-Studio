@@ -1,0 +1,51 @@
+{
+  "" : {
+    "const-values" : "/Users/Visiva/Library/Developer/Xcode/DerivedData/Visiva_-_Brand_Designer-bdotxwxmurcbptbrvyenjcbtjrep/SourcePackages/checkouts/swift-crypto/build/swift-crypto.build/Release/CryptoBoringWrapper.build/Objects-normal/arm64/CryptoBoringWrapper-primary.swiftconstvalues",
+    "dependencies" : "/Users/Visiva/Library/Developer/Xcode/DerivedData/Visiva_-_Brand_Designer-bdotxwxmurcbptbrvyenjcbtjrep/SourcePackages/checkouts/swift-crypto/build/swift-crypto.build/Release/CryptoBoringWrapper.build/Objects-normal/arm64/CryptoBoringWrapper-primary.d",
+    "diagnostics" : "/Users/Visiva/Library/Developer/Xcode/DerivedData/Visiva_-_Brand_Designer-bdotxwxmurcbptbrvyenjcbtjrep/SourcePackages/checkouts/swift-crypto/build/swift-crypto.build/Release/CryptoBoringWrapper.build/Objects-normal/arm64/CryptoBoringWrapper-primary.dia",
+    "emit-module-dependencies" : "/Users/Visiva/Library/Developer/Xcode/DerivedData/Visiva_-_Brand_Designer-bdotxwxmurcbptbrvyenjcbtjrep/SourcePackages/checkouts/swift-crypto/build/swift-crypto.build/Release/CryptoBoringWrapper.build/Objects-normal/arm64/CryptoBoringWrapper-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/Visiva/Library/Developer/Xcode/DerivedData/Visiva_-_Brand_Designer-bdotxwxmurcbptbrvyenjcbtjrep/SourcePackages/checkouts/swift-crypto/build/swift-crypto.build/Release/CryptoBoringWrapper.build/Objects-normal/arm64/CryptoBoringWrapper-primary-emit-module.dia",
+    "pch" : "/Users/Visiva/Library/Developer/Xcode/DerivedData/Visiva_-_Brand_Designer-bdotxwxmurcbptbrvyenjcbtjrep/SourcePackages/checkouts/swift-crypto/build/swift-crypto.build/Release/CryptoBoringWrapper.build/Objects-normal/arm64/CryptoBoringWrapper-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/Visiva/Library/Developer/Xcode/DerivedData/Visiva_-_Brand_Designer-bdotxwxmurcbptbrvyenjcbtjrep/SourcePackages/checkouts/swift-crypto/build/swift-crypto.build/Release/CryptoBoringWrapper.build/Objects-normal/arm64/CryptoBoringWrapper-primary.swiftdeps"
+  },
+  "/Users/Visiva/Library/Developer/Xcode/DerivedData/Visiva_-_Brand_Designer-bdotxwxmurcbptbrvyenjcbtjrep/SourcePackages/checkouts/swift-crypto/Sources/CryptoBoringWrapper/AEAD/BoringSSLAEAD.swift" : {
+    "index-unit-output-path" : "/swift-crypto.build/Release/CryptoBoringWrapper.build/Objects-normal/arm64/BoringSSLAEAD.o",
+    "llvm-bc" : "/Users/Visiva/Library/Developer/Xcode/DerivedData/Visiva_-_Brand_Designer-bdotxwxmurcbptbrvyenjcbtjrep/SourcePackages/checkouts/swift-crypto/build/swift-crypto.build/Release/CryptoBoringWrapper.build/Objects-normal/arm64/BoringSSLAEAD.bc",
+    "object" : "/Users/Visiva/Library/Developer/Xcode/DerivedData/Visiva_-_Brand_Designer-bdotxwxmurcbptbrvyenjcbtjrep/SourcePackages/checkouts/swift-crypto/build/swift-crypto.build/Release/CryptoBoringWrapper.build/Objects-normal/arm64/BoringSSLAEAD.o"
+  },
+  "/Users/Visiva/Library/Developer/Xcode/DerivedData/Visiva_-_Brand_Designer-bdotxwxmurcbptbrvyenjcbtjrep/SourcePackages/checkouts/swift-crypto/Sources/CryptoBoringWrapper/CryptoKitErrors_boring.swift" : {
+    "index-unit-output-path" : "/swift-crypto.build/Release/CryptoBoringWrapper.build/Objects-normal/arm64/CryptoKitErrors_boring.o",
+    "llvm-bc" : "/Users/Visiva/Library/Developer/Xcode/DerivedData/Visiva_-_Brand_Designer-bdotxwxmurcbptbrvyenjcbtjrep/SourcePackages/checkouts/swift-crypto/build/swift-crypto.build/Release/CryptoBoringWrapper.build/Objects-normal/arm64/CryptoKitErrors_boring.bc",
+    "object" : "/Users/Visiva/Library/Developer/Xcode/DerivedData/Visiva_-_Brand_Designer-bdotxwxmurcbptbrvyenjcbtjrep/SourcePackages/checkouts/swift-crypto/build/swift-crypto.build/Release/CryptoBoringWrapper.build/Objects-normal/arm64/CryptoKitErrors_boring.o"
+  },
+  "/Users/Visiva/Library/Developer/Xcode/DerivedData/Visiva_-_Brand_Designer-bdotxwxmurcbptbrvyenjcbtjrep/SourcePackages/checkouts/swift-crypto/Sources/CryptoBoringWrapper/EC/EllipticCurve.swift" : {
+    "index-unit-output-path" : "/swift-crypto.build/Release/CryptoBoringWrapper.build/Objects-normal/arm64/EllipticCurve.o",
+    "llvm-bc" : "/Users/Visiva/Library/Developer/Xcode/DerivedData/Visiva_-_Brand_Designer-bdotxwxmurcbptbrvyenjcbtjrep/SourcePackages/checkouts/swift-crypto/build/swift-crypto.build/Release/CryptoBoringWrapper.build/Objects-normal/arm64/EllipticCurve.bc",
+    "object" : "/Users/Visiva/Library/Developer/Xcode/DerivedData/Visiva_-_Brand_Designer-bdotxwxmurcbptbrvyenjcbtjrep/SourcePackages/checkouts/swift-crypto/build/swift-crypto.build/Release/CryptoBoringWrapper.build/Objects-normal/arm64/EllipticCurve.o"
+  },
+  "/Users/Visiva/Library/Developer/Xcode/DerivedData/Visiva_-_Brand_Designer-bdotxwxmurcbptbrvyenjcbtjrep/SourcePackages/checkouts/swift-crypto/Sources/CryptoBoringWrapper/EC/EllipticCurvePoint.swift" : {
+    "index-unit-output-path" : "/swift-crypto.build/Release/CryptoBoringWrapper.build/Objects-normal/arm64/EllipticCurvePoint.o",
+    "llvm-bc" : "/Users/Visiva/Library/Developer/Xcode/DerivedData/Visiva_-_Brand_Designer-bdotxwxmurcbptbrvyenjcbtjrep/SourcePackages/checkouts/swift-crypto/build/swift-crypto.build/Release/CryptoBoringWrapper.build/Objects-normal/arm64/EllipticCurvePoint.bc",
+    "object" : "/Users/Visiva/Library/Developer/Xcode/DerivedData/Visiva_-_Brand_Designer-bdotxwxmurcbptbrvyenjcbtjrep/SourcePackages/checkouts/swift-crypto/build/swift-crypto.build/Release/CryptoBoringWrapper.build/Objects-normal/arm64/EllipticCurvePoint.o"
+  },
+  "/Users/Visiva/Library/Developer/Xcode/DerivedData/Visiva_-_Brand_Designer-bdotxwxmurcbptbrvyenjcbtjrep/SourcePackages/checkouts/swift-crypto/Sources/CryptoBoringWrapper/Util/ArbitraryPrecisionInteger.swift" : {
+    "index-unit-output-path" : "/swift-crypto.build/Release/CryptoBoringWrapper.build/Objects-normal/arm64/ArbitraryPrecisionInteger.o",
+    "llvm-bc" : "/Users/Visiva/Library/Developer/Xcode/DerivedData/Visiva_-_Brand_Designer-bdotxwxmurcbptbrvyenjcbtjrep/SourcePackages/checkouts/swift-crypto/build/swift-crypto.build/Release/CryptoBoringWrapper.build/Objects-normal/arm64/ArbitraryPrecisionInteger.bc",
+    "object" : "/Users/Visiva/Library/Developer/Xcode/DerivedData/Visiva_-_Brand_Designer-bdotxwxmurcbptbrvyenjcbtjrep/SourcePackages/checkouts/swift-crypto/build/swift-crypto.build/Release/CryptoBoringWrapper.build/Objects-normal/arm64/ArbitraryPrecisionInteger.o"
+  },
+  "/Users/Visiva/Library/Developer/Xcode/DerivedData/Visiva_-_Brand_Designer-bdotxwxmurcbptbrvyenjcbtjrep/SourcePackages/checkouts/swift-crypto/Sources/CryptoBoringWrapper/Util/FiniteFieldArithmeticContext.swift" : {
+    "index-unit-output-path" : "/swift-crypto.build/Release/CryptoBoringWrapper.build/Objects-normal/arm64/FiniteFieldArithmeticContext.o",
+    "llvm-bc" : "/Users/Visiva/Library/Developer/Xcode/DerivedData/Visiva_-_Brand_Designer-bdotxwxmurcbptbrvyenjcbtjrep/SourcePackages/checkouts/swift-crypto/build/swift-crypto.build/Release/CryptoBoringWrapper.build/Objects-normal/arm64/FiniteFieldArithmeticContext.bc",
+    "object" : "/Users/Visiva/Library/Developer/Xcode/DerivedData/Visiva_-_Brand_Designer-bdotxwxmurcbptbrvyenjcbtjrep/SourcePackages/checkouts/swift-crypto/build/swift-crypto.build/Release/CryptoBoringWrapper.build/Objects-normal/arm64/FiniteFieldArithmeticContext.o"
+  },
+  "/Users/Visiva/Library/Developer/Xcode/DerivedData/Visiva_-_Brand_Designer-bdotxwxmurcbptbrvyenjcbtjrep/SourcePackages/checkouts/swift-crypto/Sources/CryptoBoringWrapper/Util/RandomBytes.swift" : {
+    "index-unit-output-path" : "/swift-crypto.build/Release/CryptoBoringWrapper.build/Objects-normal/arm64/RandomBytes.o",
+    "llvm-bc" : "/Users/Visiva/Library/Developer/Xcode/DerivedData/Visiva_-_Brand_Designer-bdotxwxmurcbptbrvyenjcbtjrep/SourcePackages/checkouts/swift-crypto/build/swift-crypto.build/Release/CryptoBoringWrapper.build/Objects-normal/arm64/RandomBytes.bc",
+    "object" : "/Users/Visiva/Library/Developer/Xcode/DerivedData/Visiva_-_Brand_Designer-bdotxwxmurcbptbrvyenjcbtjrep/SourcePackages/checkouts/swift-crypto/build/swift-crypto.build/Release/CryptoBoringWrapper.build/Objects-normal/arm64/RandomBytes.o"
+  },
+  "/Users/Visiva/Library/Developer/Xcode/DerivedData/Visiva_-_Brand_Designer-bdotxwxmurcbptbrvyenjcbtjrep/SourcePackages/checkouts/swift-crypto/build/swift-crypto.build/Release/CryptoBoringWrapper.build/DerivedSources/resource_bundle_accessor.swift" : {
+    "index-unit-output-path" : "/swift-crypto.build/Release/CryptoBoringWrapper.build/Objects-normal/arm64/resource_bundle_accessor.o",
+    "llvm-bc" : "/Users/Visiva/Library/Developer/Xcode/DerivedData/Visiva_-_Brand_Designer-bdotxwxmurcbptbrvyenjcbtjrep/SourcePackages/checkouts/swift-crypto/build/swift-crypto.build/Release/CryptoBoringWrapper.build/Objects-normal/arm64/resource_bundle_accessor.bc",
+    "object" : "/Users/Visiva/Library/Developer/Xcode/DerivedData/Visiva_-_Brand_Designer-bdotxwxmurcbptbrvyenjcbtjrep/SourcePackages/checkouts/swift-crypto/build/swift-crypto.build/Release/CryptoBoringWrapper.build/Objects-normal/arm64/resource_bundle_accessor.o"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "" : {
+    "const-values" : "/Users/Visiva/Library/Developer/Xcode/DerivedData/Visiva_-_Brand_Designer-bdotxwxmurcbptbrvyenjcbtjrep/SourcePackages/checkouts/swift-collections/build/swift-collections.build/Release/Collections.build/Objects-normal/arm64/Collections-primary.swiftconstvalues",
+    "dependencies" : "/Users/Visiva/Library/Developer/Xcode/DerivedData/Visiva_-_Brand_Designer-bdotxwxmurcbptbrvyenjcbtjrep/SourcePackages/checkouts/swift-collections/build/swift-collections.build/Release/Collections.build/Objects-normal/arm64/Collections-primary.d",
+    "diagnostics" : "/Users/Visiva/Library/Developer/Xcode/DerivedData/Visiva_-_Brand_Designer-bdotxwxmurcbptbrvyenjcbtjrep/SourcePackages/checkouts/swift-collections/build/swift-collections.build/Release/Collections.build/Objects-normal/arm64/Collections-primary.dia",
+    "emit-module-dependencies" : "/Users/Visiva/Library/Developer/Xcode/DerivedData/Visiva_-_Brand_Designer-bdotxwxmurcbptbrvyenjcbtjrep/SourcePackages/checkouts/swift-collections/build/swift-collections.build/Release/Collections.build/Objects-normal/arm64/Collections-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/Visiva/Library/Developer/Xcode/DerivedData/Visiva_-_Brand_Designer-bdotxwxmurcbptbrvyenjcbtjrep/SourcePackages/checkouts/swift-collections/build/swift-collections.build/Release/Collections.build/Objects-normal/arm64/Collections-primary-emit-module.dia",
+    "pch" : "/Users/Visiva/Library/Developer/Xcode/DerivedData/Visiva_-_Brand_Designer-bdotxwxmurcbptbrvyenjcbtjrep/SourcePackages/checkouts/swift-collections/build/swift-collections.build/Release/Collections.build/Objects-normal/arm64/Collections-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/Visiva/Library/Developer/Xcode/DerivedData/Visiva_-_Brand_Designer-bdotxwxmurcbptbrvyenjcbtjrep/SourcePackages/checkouts/swift-collections/build/swift-collections.build/Release/Collections.build/Objects-normal/arm64/Collections-primary.swiftdeps"
+  },
+  "/Users/Visiva/Library/Developer/Xcode/DerivedData/Visiva_-_Brand_Designer-bdotxwxmurcbptbrvyenjcbtjrep/SourcePackages/checkouts/swift-collections/Sources/Collections/Collections.swift" : {
+    "index-unit-output-path" : "/swift-collections.build/Release/Collections.build/Objects-normal/arm64/Collections-58deb12f7a5162705e5580d6caacb24a.o",
+    "llvm-bc" : "/Users/Visiva/Library/Developer/Xcode/DerivedData/Visiva_-_Brand_Designer-bdotxwxmurcbptbrvyenjcbtjrep/SourcePackages/checkouts/swift-collections/build/swift-collections.build/Release/Collections.build/Objects-normal/arm64/Collections-58deb12f7a5162705e5580d6caacb24a.bc",
+    "object" : "/Users/Visiva/Library/Developer/Xcode/DerivedData/Visiva_-_Brand_Designer-bdotxwxmurcbptbrvyenjcbtjrep/SourcePackages/checkouts/swift-collections/build/swift-collections.build/Release/Collections.build/Objects-normal/arm64/Collections-58deb12f7a5162705e5580d6caacb24a.o"
+  }
+}

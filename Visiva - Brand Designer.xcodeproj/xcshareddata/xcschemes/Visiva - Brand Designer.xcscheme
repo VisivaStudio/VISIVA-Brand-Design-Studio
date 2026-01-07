@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scheme
+   LastUpgradeVersion = "2620"
+   version = "2.2">
+   <BuildAction
+      parallelizeBuildables = "YES"
+      buildImplicitDependencies = "YES"
+      buildArchitectures = "Automatic">
+      <PreActions>
+         <ExecutionAction
+            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
+            <ActionContent
+               title = "Run Script"
+               scriptText = "#!/bin/sh&#10;echo &quot;&#x1f6a7; Starting VISIVA&#x2122; build phase...&quot;&#10;&#10;# Example: Inject build timestamp into Info.plist&#10;BUILD_DATE=$(date)&#10;defaults write &quot;${TARGET_BUILD_DIR}/${INFOPLIST_PATH}&quot; BuildDate &quot;$BUILD_DATE&quot;&#10;&#10;# Example: Validate trademark symbol in branding assets&#10;grep -q &quot;VISIVA&#x2122;&quot; &quot;${PROJECT_DIR}/BrandAssets/branding.txt&quot; || {&#10;  echo &quot;&#x274c; Trademark symbol missing in branding assets.&quot;&#10;  exit 1&#10;}&#10;# Type a script or drag a script file from your workspace to insert its path.&#10;"
+               shellToInvoke = "/bin/sh">
+               <EnvironmentBuildable>
+                  <BuildableReference
+                     BuildableIdentifier = "primary"
+                     BlueprintIdentifier = "0935EE812F0A6A6C00C801D5"
+                     BuildableName = "Visiva - Brand Designer.app"
+                     BlueprintName = "Visiva - Brand Designer"
+                     ReferencedContainer = "container:Visiva - Brand Designer.xcodeproj">
+                  </BuildableReference>
+               </EnvironmentBuildable>
+            </ActionContent>
+         </ExecutionAction>
+      </PreActions>
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <TestPlanReference
+               reference = "container:Visiva - Brand Designer.xctestplan">
+            </TestPlanReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "NO"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <AutocreatedTestPlanReference>
+            </AutocreatedTestPlanReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "0935EE812F0A6A6C00C801D5"
+               BuildableName = "Visiva - Brand Designer.app"
+               BlueprintName = "Visiva - Brand Designer"
+               ReferencedContainer = "container:Visiva - Brand Designer.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
+   </BuildAction>
+   <TestAction
+      buildConfiguration = "Release"
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      shouldUseLaunchSchemeArgsEnv = "YES">
+      <PreActions>
+         <ExecutionAction
+            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
+            <ActionContent
+               title = "Run Script"
+               scriptText = "#!/bin/sh&#10;echo &quot;&#x1f9ea; Preparing VISIVA&#x2122; test environment...&quot;&#10;&#10;# Example: Set up mock data or test config&#10;cp &quot;${PROJECT_DIR}/Tests/mock_config.json&quot; &quot;${TARGET_BUILD_DIR}/mock_config.json&quot;&#10;&#10;# Example: Notify on test completion&#10;trap &apos;echo &quot;&#x2705; VISIVA&#x2122; tests completed.&quot;&apos; EXIT&#10;# Type a script or drag a script file from your workspace to insert its path.&#10;"
+               shellToInvoke = "/bin/sh">
+               <EnvironmentBuildable>
+                  <BuildableReference
+                     BuildableIdentifier = "primary"
+                     BlueprintIdentifier = "0935EE812F0A6A6C00C801D5"
+                     BuildableName = "Visiva - Brand Designer.app"
+                     BlueprintName = "Visiva - Brand Designer"
+                     ReferencedContainer = "container:Visiva - Brand Designer.xcodeproj">
+                  </BuildableReference>
+               </EnvironmentBuildable>
+            </ActionContent>
+         </ExecutionAction>
+      </PreActions>
+      <TestPlans>
+         <TestPlanReference
+            reference = "container:Visiva - Brand Designer.xctestplan"
+            default = "YES">
+         </TestPlanReference>
+      </TestPlans>
+      <Testables>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "0935EE922F0A6A6E00C801D5"
+               BuildableName = "Visiva - Brand DesignerTests.xctest"
+               BlueprintName = "Visiva - Brand DesignerTests"
+               ReferencedContainer = "container:Visiva - Brand Designer.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "0935EE9C2F0A6A6E00C801D5"
+               BuildableName = "Visiva App.xctest"
+               BlueprintName = "Visiva - Brand DesignerUITests"
+               ReferencedContainer = "container:Visiva - Brand Designer.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+      </Testables>
+   </TestAction>
+   <LaunchAction
+      buildConfiguration = "Release"
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      launchStyle = "0"
+      useCustomWorkingDirectory = "NO"
+      ignoresPersistentStateOnLaunch = "NO"
+      debugDocumentVersioning = "YES"
+      debugServiceExtension = "internal"
+      enableGPUShaderValidationMode = "2"
+      showGraphicsOverview = "Yes"
+      logGraphicsOverview = "Yes"
+      allowLocationSimulation = "YES">
+      <PreActions>
+         <ExecutionAction
+            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
+            <ActionContent
+               title = "Run Script"
+               scriptText = "#!/bin/sh&#10;echo &quot;&#x1f527; Running VISIVA&#x2122; post-build script...&quot;&#10;&#10;# Example: Remove temporary files or artifacts&#10;rm -rf &quot;${PROJECT_DIR}/TempArtifacts&quot;&#10;&#10;# Example: Run SwiftLint if installed&#10;if which swiftlint &gt;/dev/null; then&#10;  swiftlint&#10;else&#10;  echo &quot;&#x26a0;&#xfe0f; SwiftLint not installed. Skipping lint check.&quot;&#10;fi&#10;# Type a script or drag a script file from your workspace to insert its path.&#10;"
+               shellToInvoke = "/bin/sh">
+               <EnvironmentBuildable>
+                  <BuildableReference
+                     BuildableIdentifier = "primary"
+                     BlueprintIdentifier = "0935EE812F0A6A6C00C801D5"
+                     BuildableName = "Visiva - Brand Designer.app"
+                     BlueprintName = "Visiva - Brand Designer"
+                     ReferencedContainer = "container:Visiva - Brand Designer.xcodeproj">
+                  </BuildableReference>
+               </EnvironmentBuildable>
+            </ActionContent>
+         </ExecutionAction>
+      </PreActions>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "0935EE812F0A6A6C00C801D5"
+            BuildableName = "Visiva - Brand Designer.app"
+            BlueprintName = "Visiva - Brand Designer"
+            ReferencedContainer = "container:Visiva - Brand Designer.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+   </LaunchAction>
+   <ProfileAction
+      buildConfiguration = "Release"
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      savedToolIdentifier = ""
+      useCustomWorkingDirectory = "YES"
+      ignoresPersistentStateOnLaunch = "YES"
+      debugDocumentVersioning = "YES">
+      <PreActions>
+         <ExecutionAction
+            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
+            <ActionContent
+               title = "Run Script"
+               scriptText = "# Type a script or drag a script file from your workspace to insert its path.&#10;"
+               shellToInvoke = "/bin/sh">
+               <EnvironmentBuildable>
+                  <BuildableReference
+                     BuildableIdentifier = "primary"
+                     BlueprintIdentifier = "0935EE812F0A6A6C00C801D5"
+                     BuildableName = "Visiva - Brand Designer.app"
+                     BlueprintName = "Visiva - Brand Designer"
+                     ReferencedContainer = "container:Visiva - Brand Designer.xcodeproj">
+                  </BuildableReference>
+               </EnvironmentBuildable>
+            </ActionContent>
+         </ExecutionAction>
+      </PreActions>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "0935EE812F0A6A6C00C801D5"
+            BuildableName = "Visiva - Brand Designer.app"
+            BlueprintName = "Visiva - Brand Designer"
+            ReferencedContainer = "container:Visiva - Brand Designer.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+   </ProfileAction>
+   <AnalyzeAction
+      buildConfiguration = "Release">
+   </AnalyzeAction>
+   <ArchiveAction
+      buildConfiguration = "Release"
+      revealArchiveInOrganizer = "YES"
+      allowsArchivingForSimulator = "YES">
+   </ArchiveAction>
+</Scheme>
