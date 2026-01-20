@@ -1,40 +1,41 @@
-# VISIVA® — Brand Design Studio
+# VISIVA® – Brand Designer
 
-VISIVA® is a registered trademark brand design studio architecting **identity, storytelling, and gradient‑driven design systems**.  
-We combine precision, clarity, and legacy‑driven vision to craft experiences that stand the test of time.
-
----
-
-## ✨ What We Do
-- **Strategic Storytelling** — shaping narratives that build enduring brand legacies.  
-- **Identity Architecture** — designing systems that unify visual and verbal expression.  
-- **Gradient‑Driven Design** — vivid palettes of red → orange → pink → purple → blue locked into every branded experience.  
-- **Cross‑Platform Consistency** — ensuring VISIVA®’s brand presence is seamless across web and mobile.  
+VISIVA® – Brand Designer is our flagship app for **architecting brand identity, web design, and strategic storytelling**.  
+Every pixel, every workflow, and every narrative is aligned with VISIVA®’s registered trademark vision.
 
 ---
 
-## 🌐 Website
-[visiva.site](https://visiva.site)
+## ✨ Features
+
+- **Trademarked Gradient Palette**  
+  Red → Orange → Pink → Purple → Blue, locked into `Assets.xcassets` for consistent branding.
+
+- **Cross‑Platform Architecture**  
+  SwiftUI (iOS/macOS) and React (Web) implementations, ensuring VISIVA®’s experience is seamless across platforms.
+
+- **Branded Asset Catalog**  
+  Icons, gradients, and logos packaged in `Assets.xcassets` with trademark integrity.
+
+- **Strategic Storytelling**  
+  Built‑in About page and launch screen that reflect VISIVA®’s legacy‑driven narrative.
 
 ---
 
-## 📂 Repository Focus
-This repository contains:
-- Branded assets and design system documentation.  
-- Workflow scripts and configuration files for minimal, error‑free environments.  
-- Navigation flows and UI/UX patterns aligned with VISIVA®’s legacy vision.  
+## 📂 Project Structure
+
+Visiva-Brand-Designer/
+├── Visiva-Brand-Designer.xcodeproj
+├── Assets.xcassets/
+│   └── AppIcon.appiconset
+├── Package.swift
+├── Sources/
+│   └── VisivaBrandDesignerApp.swift
+└── Tests/
 
 ---
 
-## 💡 Topics
-`visiva brand-identity storytelling design-system gradient-ui creative-direction zar-pricing`
+## 🚀 Getting Started
 
----
-
-## 📜 Trademark Notice
-VISIVA® is a registered trademark. All assets, narratives, and design systems in this repository are protected and must be represented with authenticity and professional integrity.
-
----
-
-## 🚀 Vision
-To establish VISIVA® as the leading brand provider nationally and internationally, leaving a lasting legacy in the design industry.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/visiva/Visiva-Brand-Designer.git
