@@ -1,41 +1,46 @@
 {
-  "configurations" : [
+  "configurations": [
     {
-      "id" : "05B882ED-3B16-4F62-8AA2-A4175F3965E3",
-      "name" : "Test Scheme Action",
-      "options" : {
-        "distributor" : "com.apple.TestFlight",
-        "environmentVariableEntries" : [
+      "id": "05B882ED-3B16-4F62-8AA2-A4175F3965E3",
+      "name": "VISIVA® Test Suite",
+      "options": {
+        "distributor": "com.apple.TestFlight",
+        "environmentVariableEntries": [
           {
-            "enabled" : false,
-            "key" : "",
-            "value" : ""
+            "enabled": true,
+            "key": "VISIVA_ENV",
+            "value": "production"
+          },
+          {
+            "enabled": true,
+            "key": "VISIVA_GRADIENT",
+            "value": "enabled"
           }
         ],
-        "repeatInNewRunnerProcess" : true
+        "repeatInNewRunnerProcess": true
       }
     }
   ],
-  "defaultOptions" : {
-    "performanceAntipatternCheckerEnabled" : true
+  "defaultOptions": {
+    "performanceAntipatternCheckerEnabled": true
   },
-  "testTargets" : [
+  "testTargets": [
     {
-      "parallelizable" : true,
-      "target" : {
-        "containerPath" : "container:Visiva - Brand Designer.xcodeproj",
-        "identifier" : "0935EE922F0A6A6E00C801D5",
-        "name" : "Visiva - Brand DesignerTests"
+      "parallelizable": true,
+      "target": {
+        "containerPath": "container:Visiva - Brand Designer.xcodeproj",
+        "identifier": "0935EE922F0A6A6E00C801D5",
+        "name": "Visiva - Brand DesignerTests"
       }
     },
     {
-      "parallelizable" : true,
-      "target" : {
-        "containerPath" : "container:Visiva - Brand Designer.xcodeproj",
-        "identifier" : "0935EE9C2F0A6A6E00C801D5",
-        "name" : "Visiva - Brand DesignerUITests"
+      "parallelizable": true,
+      "target": {
+        "containerPath": "container:Visiva - Brand Designer.xcodeproj",
+        "identifier": "0935EE9C2F0A6A6E00C801D5",
+        "name": "Visiva - Brand DesignerUITests"
       }
     }
   ],
-  "version" : 1
+  "version": 1
 }
