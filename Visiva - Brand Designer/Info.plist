@@ -1,24 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSServices</key>
-	<array>
-		<dict/>
-		<dict/>
-	</array>
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>remote-notification</string>
-		<string>fetch</string>
-		<string>processing</string>
-		<string>bluetooth-central</string>
-		<string>nearby-interaction</string>
-		<string>bluetooth-peripheral</string>
-		<string>audio</string>
-		<string>external-accessory</string>
-		<string>location</string>
-		<string>voip</string>
-	</array>
+  <key>CFBundleName</key>
+  <string>Visiva - Brand Designer</string>
+  <key>CFBundleDisplayName</key>
+  <string>VISIVA® Studio</string>
+  <key>CFBundleIdentifier</key>
+  <string>com.visiva.branddesigner</string>
+  <key>CFBundleVersion</key>
+  <string>1.0</string>
+  <key>CFBundleShortVersionString</key>
+  <string>1.0</string>
 </dict>
 </plist>
