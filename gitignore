@@ -1,0 +1,33 @@
+# VISIVA® Xcode + SwiftPM Ignore Rules
+
+# Build products
+build/
+DerivedData/
+
+# SwiftPM
+.swiftpm/
+Package.resolved
+
+# Xcode workspace/user data
+*.xcworkspace/contents.xcworkspacedata
+*.xcworkspace/xcuserdata/
+*.xcuserstate
+*.xcuserdatad/
+*.xcsettings
+
+# Logs
+*.log
+
+# Temporary files
+*.swp
+*.swo
+*.tmp
+
+# macOS system files
+.DS_Store
+
+# VISIVA® specific
+# Keep branded assets and design system files tracked,
+# but ignore transient overlays and auto-generated headers
+*.yaml
+*.xcworkspacedata
