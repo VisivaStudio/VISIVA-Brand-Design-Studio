@@ -11,29 +11,30 @@ on:
 
 jobs:
   build:
-
     runs-on: macos-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Build
-      run: swift build -v
-    - name: Run tests
-       : Upload a Build Artifact
-  uses: actions/upload-artifact@v6.0.0
-  with:
-               - name: Setup Java JDK
-  uses: actions/setup-java@v5.1.0
-  with:
-    # The Java version to set up. Takes a whole or semver Java version. See examples of supported syntax in README file
-    java-version: # optional
-    # The path to the `.java-version` file. See examples of supported syntax in README file
-    java-version-file: # optional
-    # Java distribution. See the list of supported distributions in README file
-    distribution: 
-    # The package type (jdk, jre, jdk+fx, jre+fx)
-    java-package: # optional, default is jdk
-    # The architecture of the package (defaults to the action runner's architecture)
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build
+        run: swift build -v
+
+      - name: Run tests
+        run: swift test -v
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-artifacts
+          path: .build
+
+      - name: Setup Java JDK
+        uses: actions/setup-java@v5
+        with:
+          java-version: '17'        # or 11, depending on your needs
+          distribution: 'temurin'   # recommended open-source distribution
+          java-package: 'jdk'
     architecture: # optional
     # Path to where the compressed JDK is located
     jdkFile: # optional
