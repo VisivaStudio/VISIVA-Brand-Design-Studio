@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact VISIVA® — Start Your Brand Journey</title>
+
+  /css/style.css
+  /manifest.json
+  /icons/icon-192.png
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div style="display:flex; justify-content:space-between; align-items:center; width:100%;">
+
+      index.htmlVISIVA®</a>
+
+      <div style="display:flex; gap:32px; font-size:14px;">
+        index.htmlHome</a>
+        about.htmlAbout</a>
+        brand-kits.htmlBrand Kits</a>
+        pricing.htmlPricing</a>
+        tools.htmlTools</a>
+        testimonials.htmlTestimonials</a>
+        contact.htmlContact</a>
+        https://visiva.co.za/experience-appExperience App</a>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="section" style="
+    padding-top:160px; padding-bottom:160px; text-align:center;
+    background:url('https://visiva.co.za/portfolio/_assets/media/af01527f2ca83180b59bd7a30486b91c.jpg') center/cover no-repeat;
+    position:relative;">
+    <div style="position:absolute; inset:0;
+      background:linear-gradient(180deg, rgba(0,0,0,0.75), rgba(0,0,0,0.9));"></div>
+
+    <div style="position:relative; z-index:5;">
+      <h1 class="display-xxl accent-line fade-up" style="color:white;">
+        Contact VISIVA®
+      </h1>
+      <p class="body-lg fade-up" style="animation-delay:.2s; max-width:900px; margin:24px auto;">
+        Start your brand evolution. We’ll respond within 24 hours.
+      </p>
+    </div>
+  </header>
+
+  <!-- CONTACT FORM -->
+  <section class="section" style="max-width:900px; margin:0 auto;">
+
+    <form id="contactForm" class="fade-up" style="display:flex; flex-direction:column; gap:24px;">
+
+      <input type="text" id="name" placeholder="Full Name" required
+        style="padding:16px; background:#111; border:1px solid #333; color:white; border-radius:var(--radius-md);" />
+
+      <input type="email" id="email" placeholder="Email Address" required
+        style="padding:16px; background:#111; border:1px solid #333; color:white; border-radius:var(--radius-md);" />
+
+      <input type="text" id="company" placeholder="Company (optional)"
+        style="padding:16px; background:#111; border:1px solid #333; color:white; border-radius:var(--radius-md);" />
+
+      <textarea id="message" rows="5" placeholder="Your Message" required
+        style="padding:16px; background:#111; border:1px solid #333; color:white; border-radius:var(--radius-md);"></textarea>
+
+      <button type="submit" class="button button-primary" style="margin-top:12px;">
+        Send Message
+      </button>
+
+    </form>
+
+    <!-- SUCCESS MESSAGE -->
+    <div id="successMsg"
+      style="display:none; margin-top:32px; padding:24px; background:rgba(199,167,106,0.1); border-radius:var(--radius-md); border:1px solid var(--visiva-gold); text-align:center;">
+      <p class="body-lg" style="color:var(--visiva-gold); font-weight:600;">
+        ✓ Your message has been sent!
+      </p>
+      <p class="body" style="opacity:.8;">
+        We’ll contact you shortly.
+      </p>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="section" style="text-align:center; border-top:1px solid rgba(255,255,255,0.1);">
+    <p class="mono" style="color:var(--visiva-gold); margin-bottom:16px;">
+      VISIVA® Brand Design Studio
+    </p>
+
+    <div style="margin-top:16px; display:flex; gap:24px; justify-content:center;">
+      https://instagram.com/visivaInstagram</a>
+      https://linkedin.com/company/visivaLinkedIn</a>
+      https://visiva.siteWebsite</a>
+    </div>
+
+    <p class="mono" style="margin-top:24px; opacity:.4; font-size:12px;">
+      © 2025 VISIVA®. All Rights Reserved.
+    </p>
+  </footer>
+
+  <!-- CONTACT FORM LOGIC -->
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      document.getElementById("contactForm").style.display = "none";
+      document.getElementById("successMsg").style.display = "block";
+    });
+  </script>
+
+  /js/app.js</script>
+  /js/pwa.js</script>
+
+</body>
+</html>
+
