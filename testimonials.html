@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VISIVA® Testimonials</title>
+
+  /css/style.css
+  /manifest.json
+  /icons/icon-192.png
+</head>
+
+<body>
+
+  <!-- ================================
+       NAVIGATION
+  ================================ -->
+  <nav class="navbar">
+    <div style="display:flex; justify-content:space-between; align-items:center; width:100%;">
+
+      index.htmlVISIVA®</a>
+
+      <div style="display:flex; gap:32px; font-size:14px;">
+        index.htmlHome</a>
+        about.htmlAbout</a>
+        brand-kits.htmlBrand Kits</a>
+        pricing.htmlPricing</a>
+        tools.htmlTools</a>
+        testimonials.htmlTestimonials</a>
+        contact.htmlContact</a>
+        https://visiva.co.za/experience-appExperience App</a>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- ================================
+       HERO
+  ================================ -->
+  <header class="section" style="
+    padding-top:160px; padding-bottom:160px; text-align:center;
+    background:url('https://visiva.co.za/portfolio/_assets/media/af01527f2ca83180b59bd7a30486b91c.jpg') center/cover no-repeat;
+    position:relative;">
+    <div style="position:absolute; inset:0;
+      background:linear-gradient(180deg, rgba(0,0,0,0.75), rgba(0,0,0,0.9));"></div>
+
+    <div style="position:relative; z-index:5;">
+      <h1 class="display-xxl accent-line fade-up" style="color:white;">
+        Client Testimonials
+      </h1>
+      <p class="body-lg fade-up" style="animation-delay:.2s; max-width:900px; margin:24px auto; color:#f5f5f5;">
+        Real stories from real founders whose brands were transformed by VISIVA®.
+      </p>
+    </div>
+  </header>
+
+  <!-- ================================
+       SLIDER
+  ================================ -->
+  <section class="section" style="max-width:900px; margin:0 auto;">
+
+    <div id="testimonialSlider" style="position:relative; overflow:hidden;">
+
+      <!-- Slide 1 -->
+      <div class="testimonial-slide fade-up" style="display:block; text-align:center;">
+        <p class="body-lg" style="line-height:1.8;">
+          “VISIVA® transformed our brand from generic to unforgettable.
+          The Natural Kit was the perfect foundation, and they customized
+          it beautifully to match our sustainability values.”
+        </p>
+        <p class="mono" style="margin-top:20px; color:var(--visiva-gold);">
+          — Sarah Mitchell, Founder of EcoLux Beauty
+        </p>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="testimonial-slide fade-up" style="display:none; text-align:center;">
+        <p class="body-lg" style="line-height:1.8;">
+          “The Tech Startup Kit gave us the modern, innovative edge we
+          needed. Investors immediately noticed the professional
+          presentation. Worth every rand.”
+        </p>
+        <p class="mono" style="margin-top:20px; color:var(--visiva-gold);">
+          — Marcus Chen, CEO of Quantum AI
+        </p>
+      </div>
+
+      <!-- Slider Controls -->
+      <div style="margin-top:32px; display:flex; justify-content:center; gap:24px;">
+        <button id="prevBtn" class="button" style="background:transparent; border:1px solid var(--visiva-gold); color:var(--visiva-gold);">Prev</button>
+        <button id="nextBtn" class="button" style="background:var(--visiva-gold); color:black;">Next</button>
+      </div>
+
+      <!-- Dots -->
+      <div id="dots" style="display:flex; justify-content:center; gap:10px; margin-top:20px;">
+        <span class="dot" style="width:10px; height:10px; background:var(--visiva-gold); border-radius:50%;"></span>
+        <span class="dot" style="width:10px; height:10px; background:#444; border-radius:50%;"></span>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================================
+       FOOTER
+  ================================ -->
+  <footer class="section" style="text-align:center; border-top:1px solid rgba(255,255,255,0.1);">
+    <p class="mono" style="color:var(--visiva-gold); margin-bottom:16px;">VISIVA® Brand Design Studio</p>
+
+    <div style="margin-top:16px; display:flex; gap:24px; justify-content:center;">
+      https://instagram.com/visivaInstagram</a>
+      https://linkedin.com/company/visivaLinkedIn</a>
+      https://visiva.siteWebsite</a>
+    </div>
+
+    <p class="mono" style="margin-top:24px; opacity:.4; font-size:12px;">© 2025 VISIVA®. All Rights Reserved.</p>
+  </footer>
+
+  <!-- ================================
+       SLIDER JS
+  ================================ -->
+  <script>
+    const slides = document.querySelectorAll(".testimonial-slide");
+    const dots = document.querySelectorAll(".dot");
+    let index = 0;
+
+    function showSlide(i) {
+      slides.forEach(sl => sl.style.display = "none");
+      dots.forEach(d => d.style.background = "#444");
+      slides[i].style.display = "block";
+      dots[i].style.background = "var(--visiva-gold)";
+    }
+
+    document.getElementById("nextBtn").onclick = () => {
+      index = (index + 1) % slides.length;
+      showSlide(index);
+    };
+
+    document.getElementById("prevBtn").onclick = () => {
+      index = (index - 1 + slides.length) % slides.length;
+      showSlide(index);
+    };
+
+    setInterval(() => {
+      index = (index + 1) % slides.length;
+      showSlide(index);
+    }, 6000);
+  </script>
+
+  /js/app.js</script>
+  /js/pwa.js</script>
+
+</body>
+</html>
+
