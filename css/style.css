@@ -1,0 +1,174 @@
+Balanced Hybrid VISIVA UI System
+(Cinematic + Editorial + Modern SaaS)
+/* ================================
+   VISIVA® GLOBAL DESIGN SYSTEM
+   Balanced Hybrid UI (Luxury + Editorial + SaaS)
+   ================================ */
+
+/* ---------- CSS RESET ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0E0E0E;
+  color: #FFFFFF;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+}
+
+/* ---------- DESIGN TOKENS ---------- */
+:root {
+  /* Colors */
+  --visiva-black: #000000;
+  --visiva-black-90: #0E0E0E;
+  --visiva-soft-white: #F5F5F5;
+  --visiva-white: #FFFFFF;
+  --visiva-gold: #C7A76A;
+  --visiva-blue: #0066FF;
+
+  /* Typography */
+  --font-display: 'Crimson Pro', serif;
+  --font-ui: 'Montserrat', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  /* Sizing scales */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 48px;
+  --space-xl: 72px;
+
+  /* Radii */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 20px;
+
+  /* Shadows */
+  --shadow-soft: 0 8px 24px rgba(0,0,0,0.4);
+  --shadow-gold: 0 0 32px rgba(199, 167, 106, 0.4);
+
+  /* Motion */
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ---------- Typography System ---------- */
+.display-xxl {
+  font-family: var(--font-display);
+  font-size: 64px;
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+.display-xl {
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.heading {
+  font-family: var(--font-ui);
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.body-lg {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.body {
+  font-size: 16px;
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+/* ---------- UI COMPONENTS ---------- */
+.button {
+  padding: 14px 32px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  letter-spacing: .05em;
+  transition: all .3s var(--ease-smooth);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.button-primary {
+  background: var(--visiva-gold);
+  color: var(--visiva-black);
+  box-shadow: var(--shadow-gold);
+}
+
+.button-primary:hover {
+  transform: translateY(-4px);
+}
+
+.card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: var(--space-lg);
+  border-radius: var(--radius-lg);
+  transition: all .3s var(--ease-smooth);
+}
+
+.card:hover {
+  border-color: var(--visiva-gold);
+  box-shadow: var(--shadow-gold);
+}
+
+.navbar {
+  backdrop-filter: blur(12px);
+  background: rgba(0,0,0,0.6);
+  padding: var(--space-md) var(--space-lg);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.section {
+  padding: var(--space-xl) var(--space-lg);
+}
+
+/* Editorial gold accent line */
+.accent-line {
+  position: relative;
+  display: inline-block;
+}
+
+.accent-line::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--visiva-gold), transparent);
+}
+
+/* ---------- Animations ---------- */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp .9s var(--ease-smooth) forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
