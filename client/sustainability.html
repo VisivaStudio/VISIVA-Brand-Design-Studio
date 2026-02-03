@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sustainability & Accessibility — VISIVA® Client Portal</title>
+
+  ../css/style.css
+  ./portal.css
+  ../manifest.json
+</head>
+
+<body>
+  <div class="portal-shell">
+
+    <aside class="portal-sidebar">
+      <div class="portal-brand">
+        <div class="logo">VISIVA® PORTAL</div>
+        <div class="portal-badge">Client</div>
+      </div>
+
+      <div class="portal-section-title">Core</div>
+      <nav class="portal-nav">
+        dashboard.htmlDashboard</a>
+        projects.htmlProjects</a>
+        assets.htmlAssets</a>
+        downloads.htmlDownloads</a>
+      </nav>
+
+      <div class="portal-section-title">Workspaces</div>
+      <nav class="portal-nav">
+        collaboration.htmlCollaboration Rooms</a>
+        brand-health.htmlBrand Health Check</a>
+        licensing.htmlLegal & Licensing</a>
+        sustainability.htmlSustainability</a>
+        notifications.htmlNotifications</a>
+      </nav>
+
+      <div class="portal-divider"></div>
+      ../index.html← Back to Website</a>
+    </aside>
+
+    <main class="portal-main">
+      <div class="portal-topbar">
+        <div>
+          <div class="portal-title">Sustainability & Accessibility</div>
+          <div class="portal-subtitle">
+            Eco‑conscious and inclusive design standards — WCAG-aware colour contrast, typography clarity, and digital-first practices. [1](https://onedrive.live.com/personal/72b59963c95882a1/_layouts/15/doc.aspx?resid=7eef7866-44e5-439e-be23-cee1aed6f46e&cid=72b59963c95882a1)
+          </div>
+        </div>
+        <div class="portal-actions">
+          <button class="portal-btn primary" id="logoutBtn">Logout</button>
+        </div>
+      </div>
+
+      <div class="portal-grid">
+
+        <section class="portal-card wide">
+          <div class="portal-meta">Sustainability Practices</div>
+          <h3>Eco‑First Guidelines</h3>
+
+          <div class="portal-list">
+            <div class="portal-item"><div><strong>Digital‑first assets</strong><br><small>Reduce material waste</small></div><span class="portal-pill">Standard</span></div>
+            <div class="portal-item"><div><strong>Eco‑friendly printing</strong><br><small>Paper + ink recommendations</small></div><span class="portal-pill">Standard</span></div>
+            <div class="portal-item"><div><strong>Ethical imagery sourcing</strong><br><small>Respect licensing + origin</small></div><span class="portal-pill">Standard</span></div>
+          </div>
+        </section>
+
+        <section class="portal-card">
+          <div class="portal-meta">Accessibility</div>
+          <h3>WCAG‑Aligned Checks</h3>
+
+          <div class="portal-list">
+            <div class="portal-item"><div><strong>Colour contrast</strong><br><small>Text readability on all surfaces</small></div><span class="portal-pill">Check</span></div>
+            <div class="portal-item"><div><strong>Typography clarity</strong><br><small>Size + spacing</small></div><span class="portal-pill">Check</span></div>
+            <div class="portal-item"><div><strong>Inclusive language</strong><br><small>Tone + content guidance</small></div><span class="portal-pill">Check</span></div>
+          </div>
+        </section>
+
+        <section class="portal-card full">
+          <div class="portal-meta">Self‑Audit</div>
+          <h3>Project Checklist (Saved Locally)</h3>
+
+          <form class="portal-form" id="auditForm">
+            <label><input type="checkbox" id="a1" /> I verified contrast on primary/secondary surfaces.</label>
+            <label><input type="checkbox" id="a2" /> I ensured templates use approved type scale.</label>
+            <label><input type="checkbox" id="a3" /> I validated digital-first assets before print.</label>
+            <button class="portal-btn primary" type="submit">Save Checklist</button>
+            <div class="portal-help">Stores locally for now. Connect to backend later. [1](https://onedrive.live.com/personal/72b59963c95882a1/_layouts/15/doc.aspx?resid=7eef7866-44e5-439e-be23-cee1aed6f46e&cid=72b59963c95882a1)</div>
+          </form>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  ./portal.js</script>
+  <script>
+    const k = "visiva_sustain_audit_v1";
+    const ids = ["a1","a2","a3"];
+
+    function load() {
+      try { return JSON.parse(localStorage.getItem(k)) || {}; }
+      catch { return {}; }
+    }
+    function save(obj) { localStorage.setItem(k, JSON.stringify(obj)); }
+
+    const st = load();
+    ids.forEach(id => { if (st[id] !== undefined) document.getElementById(id).checked = st[id]; });
+
+    document.getElementById("auditForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const obj = {};
+      ids.forEach(id => obj[id] = document.getElementById(id).checked);
+      save(obj);
+      alert("Checklist saved (local).");
+    });
+  </script>
+</body>
+</html>
