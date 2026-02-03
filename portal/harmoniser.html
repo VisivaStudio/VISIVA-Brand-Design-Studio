@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Colour Harmoniser — VISIVA®</title>
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../client/portal.css" />
+  <link rel="stylesheet" href="./tool.css" />
+  <link rel="manifest" href="../manifest.json" />
+</head>
+<body>
+
+  <div class="portal-shell">
+    <aside class="portal-sidebar">
+      <div class="portal-brand">
+        <div class="logo">VISIVA® PORTAL</div>
+        <div class="portal-badge">Tools</div>
+      </div>
+
+      <div class="portal-section-title">Client</div>
+      <nav class="portal-nav">
+        <a class="portal-link" href="../client/dashboard.html">Dashboard</a>
+        <a class="portal-link" href="../client/projects.html">Projects</a>
+        <a class="portal-link" href="../client/assets.html">Assets</a>
+        <a class="portal-link" href="../client/downloads.html">Downloads</a>
+      </nav>
+
+      <div class="portal-section-title">AI & Tools</div>
+      <nav class="portal-nav">
+        <a class="portal-link" href="brand-dna.html">Brand DNA Generator</a>
+        <a class="portal-link" href="logo-optimiser.html">AI Logo Optimiser</a>
+        <a class="portal-link" href="copy-tone.html">AI Copy Tone Assistant</a>
+        <a class="portal-link" href="color-generator.html">Colour Generator</a>
+        <a class="portal-link" href="harmoniser.html">Smart Colour Harmoniser</a>
+        <a class="portal-link" href="viewer-3d.html">3D Logo Viewer</a>
+        <a class="portal-link" href="bie-dashboard.html">B.I.E. Dashboard</a>
+      </nav>
+
+      <div class="portal-divider"></div>
+      <a class="portal-link" href="../index.html">← Back to Website</a>
+    </aside>
+
+    <main class="portal-main">
+      <div class="portal-topbar">
+        <div>
+          <div class="portal-title">Smart Colour Harmoniser</div>
+          <div class="portal-subtitle">Generate complementary tones based on a primary colour and campaign mood.</div>
+        </div>
+        <div class="portal-actions">
+          <button class="portal-btn primary" id="logoutBtn">Logout</button>
+        </div>
+      </div>
+
+      <div class="tool-grid">
+        <section class="tool-panel wide">
+          <h2>Inputs</h2>
+          <p class="hint">Enter a primary hex colour. In production, connect to <code>/api/harmonise</code>.</p>
+
+          <div class="tool-row">
+            <input class="portal-input" id="primary" placeholder="Primary Hex (e.g., #C7A76A)" value="#C7A76A" />
+            <select class="portal-select" id="mode">
+              <option>Complementary</option>
+              <option>Analogous</option>
+              <option>Triadic</option>
+              <option>Monochrome</option>
+            </select>
+          </div>
+
+          <div class="tool-actions">
+            <button class="portal-btn primary" id="harm">Harmonise</button>
+            <button class="portal-btn" id="export">Export (TXT)</button>
+          </div>
+        </section>
+
+        <section class="tool-panel narrow">
+          <h2>Output</h2>
+          <p class="hint">Palette preview (demo algorithm).</p>
+          <div id="sw" style="display:grid; grid-template-columns:repeat(2,1fr); gap:10px;"></div>
+          <div class="tool-output" id="out" style="margin-top:12px;">Click “Harmonise”.</div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="./tool.js"></script>
+  <script>
+    const sw = document.getElementById("sw");
+    const out = document.getElementById("out");
+
+    function clamp(n){ return Math.max(0, Math.min(255, n)); }
+    function hexToRgb(h){
+      const x = h.replace("#","").trim();
+      if (x.length !== 6) return [199,167,106];
+      return [parseInt(x.slice(0,2),16), parseInt(x.slice(2,4),16), parseInt(x.slice(4,6),16)];
+    }
+    function rgbToHex([r,g,b]){
+      return "#" + [r,g,b].map(v => clamp(v).toString(16).padStart(2,"0")).join("").toUpperCase();
+    }
+
+    function demoHarmonise(primary, mode){
+      const [r,g,b] = hexToRgb(primary);
+      const sets = {
+        Complementary: [
+          rgbToHex([r,g,b]),
+          rgbToHex([255-r, 255-g, 255-b]),
+          rgbToHex([Math.floor(r*0.7), Math.floor(g*0.7), Math.floor(b*0.7)]),
+          "#0E0E0E",
+          "#F5F5F5",
+          "#FFFFFF"
+        ],
+        Analogous: [
+          rgbToHex([r,g,b]),
+          rgbToHex([r, clamp(g+40), clamp(b+20)]),
+          rgbToHex([clamp(r+20), g, clamp(b+40)]),
+          "#0E0E0E",
+          "#F5F5F5",
+          "#FFFFFF"
+        ],
+        Triadic: [
+          rgbToHex([r,g,b]),
+          rgbToHex([g,b,r]),
+          rgbToHex([b,r,g]),
+          "#0E0E0E",
+          "#F5F5F5",
+          "#FFFFFF"
+        ],
+        Monochrome: [
+          rgbToHex([r,g,b]),
+          rgbToHex([Math.floor(r*0.85), Math.floor(g*0.85), Math.floor(b*0.85)]),
+          rgbToHex([Math.floor(r*0.65), Math.floor(g*0.65), Math.floor(b*0.65)]),
+          "#0E0E0E",
+          "#F5F5F5",
+          "#FFFFFF"
+        ]
+      };
+      return sets[mode] || sets.Complementary;
+    }
+
+    function render(pal){
+      sw.innerHTML = "";
+      pal.forEach(hex=>{
+        const d = document.createElement("div");
+        d.style.height = "64px";
+        d.style.borderRadius = "12px";
+        d.style.border = "1px solid rgba(255,255,255,0.10)";
+        d.style.background = hex;
+        d.title = hex;
+        sw.appendChild(d);
+      });
+      out.textContent = pal.join("\n");
+    }
+
+    document.getElementById("harm").addEventListener("click", async () => {
+      const primary = document.getElementById("primary").value.trim();
+      const mode = document.getElementById("mode").value;
+      await VISIVA.callAPI("/api/harmonise", { primary, mode });
+      render(demoHarmonise(primary, mode));
+      VISIVA.toast("Harmonised palette");
+    });
+
+    document.getElementById("export").addEventListener("click", () => {
+      const blob = new Blob([out.textContent], { type: "text/plain" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "VISIVA-Harmonised-Palette.txt";
+      a.click();
+      URL.revokeObjectURL(a.href);
+      VISIVA.toast("Exported");
+    });
+  </script>
+</body>
+</html>
