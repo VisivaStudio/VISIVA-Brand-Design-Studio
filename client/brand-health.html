@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brand Health Check — VISIVA® Client Portal</title>
+
+  ../css/style.css
+  ./portal.css
+  ../manifest.json
+</head>
+
+<body>
+  <div class="portal-shell">
+
+    <aside class="portal-sidebar">
+      <div class="portal-brand">
+        <div class="logo">VISIVA® PORTAL</div>
+        <div class="portal-badge">Client</div>
+      </div>
+
+      <div class="portal-section-title">Core</div>
+      <nav class="portal-nav">
+        dashboard.htmlDashboard</a>
+        projects.htmlProjects</a>
+        assets.htmlAssets</a>
+        downloads.htmlDownloads</a>
+      </nav>
+
+      <div class="portal-section-title">Workspaces</div>
+      <nav class="portal-nav">
+        collaboration.htmlCollaboration Rooms</a>
+        brand-health.htmlBrand Health Check</a>
+        licensing.htmlLegal & Licensing</a>
+        sustainability.htmlSustainability</a>
+        notifications.htmlNotifications</a>
+      </nav>
+
+      <div class="portal-divider"></div>
+      ../index.html← Back to Website</a>
+    </aside>
+
+    <main class="portal-main">
+
+      <div class="portal-topbar">
+        <div>
+          <div class="portal-title">Brand Health Check</div>
+          <div class="portal-subtitle">
+            Upload samples of brand usage to receive a VISIVA® consistency report (quarterly or on‑demand). [1](https://onedrive.live.com/personal/72b59963c95882a1/_layouts/15/doc.aspx?resid=7eef7866-44e5-439e-be23-cee1aed6f46e&cid=72b59963c95882a1)
+          </div>
+        </div>
+        <div class="portal-actions">
+          <button class="portal-btn primary" id="logoutBtn">Logout</button>
+        </div>
+      </div>
+
+      <div class="portal-grid">
+        <section class="portal-card wide">
+          <div class="portal-meta">Submit Samples</div>
+          <h3>Upload Brand Usage</h3>
+
+          <form class="portal-form" id="healthForm">
+            <input class="portal-input" id="campaign" placeholder="Campaign / Context (e.g., Q2 Launch, Print Brochure)" required />
+            <select class="portal-select" id="frequency">
+              <option>On‑Demand</option>
+              <option>Quarterly</option>
+            </select>
+
+            <textarea class="portal-textarea" id="notes" placeholder="Notes (what you want reviewed)"></textarea>
+
+            <input class="portal-input" id="files" type="file" multiple />
+
+            <button class="portal-btn primary" type="submit">Submit Request</button>
+
+            <div class="portal-help">
+              Upload is UI-only here. Connect this to your storage + review pipeline later. [1](https://onedrive.live.com/personal/72b59963c95882a1/_layouts/15/doc.aspx?resid=7eef7866-44e5-439e-be23-cee1aed6f46e&cid=72b59963c95882a1)
+            </div>
+          </form>
+        </section>
+
+        <section class="portal-card narrow">
+          <div class="portal-meta">Recent Requests</div>
+          <h3>Status</h3>
+          <div class="portal-list" id="requestsList"></div>
+        </section>
+      </div>
+
+    </main>
+  </div>
+
+  ./portal.js</script>
+  <script>
+    const key = "visiva_health_requests_v1";
+    const list = document.getElementById("requestsList");
+
+    function load() {
+      try { return JSON.parse(localStorage.getItem(key)) || []; }
+      catch { return []; }
+    }
+    function save(x) { localStorage.setItem(key, JSON.stringify(x)); }
+
+    function render() {
+      const items = load();
+      list.innerHTML = items.length ? items.map(r => `
+        <div class="portal-item">
+          <div>
+            <strong>${r.campaign}</strong><br/>
+            <small>${r.frequency} • ${r.when}</small>
+          </div>
+          <span class="portal-pill">${r.status}</span>
+        </div>
+      `).join("") : `<div class="portal-help">No requests yet.</div>`;
+    }
+
+    document.getElementById("healthForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const campaign = document.getElementById("campaign").value.trim();
+      const frequency = document.getElementById("frequency").value;
+      const notes = document.getElementById("notes").value.trim();
+
+      const items = load();
+      items.unshift({
+        campaign, frequency, notes,
+        when: new Date().toLocaleString(),
+        status: "Submitted"
+      });
+      save(items);
+
+      e.target.reset();
+      render();
+      alert("Health Check request submitted (UI).");
+    });
+
+    render();
+  </script>
+</body>
+</html>
