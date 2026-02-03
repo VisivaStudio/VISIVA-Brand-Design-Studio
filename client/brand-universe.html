@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brand Universe — VISIVA® Client Portal</title>
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="./portal.css" />
+  <link rel="manifest" href="../manifest.json" />
+  <link rel="icon" href="../icons/icon-192.png" />
+</head>
+
+<body>
+
+  <div class="portal-shell">
+
+    <aside class="portal-sidebar">
+      <div class="portal-brand">
+        <div class="logo">VISIVA® PORTAL</div>
+        <div class="portal-badge">Client</div>
+      </div>
+
+      <div class="portal-section-title">Core</div>
+      <nav class="portal-nav">
+        <a class="portal-link" href="dashboard.html">Dashboard</a>
+        <a class="portal-link" href="projects.html">Projects</a>
+        <a class="portal-link" href="assets.html">Assets</a>
+        <a class="portal-link" href="downloads.html">Downloads</a>
+      </nav>
+
+      <div class="portal-section-title">Brand</div>
+      <nav class="portal-nav">
+        <a class="portal-link" href="brand-universe.html">Brand Universe</a>
+        <a class="portal-link" href="settings.html">Settings</a>
+      </nav>
+
+      <div class="portal-divider"></div>
+      <a class="portal-link" href="../index.html">← Back to Website</a>
+    </aside>
+
+    <main class="portal-main">
+
+      <div class="portal-topbar">
+        <div>
+          <div class="portal-title">Brand Universe</div>
+          <div class="portal-subtitle">A holistic view of how your logo, colour, typography, imagery, and tone connect.</div>
+        </div>
+
+        <div class="portal-actions">
+          <a class="portal-btn" href="downloads.html">Download Guidelines</a>
+          <button class="portal-btn primary" id="logoutBtn">Logout</button>
+        </div>
+      </div>
+
+      <div class="portal-grid">
+        <section class="portal-card wide">
+          <div class="portal-meta">Interactive Map (UI)</div>
+          <h3>Brand Components</h3>
+          <p class="portal-help">
+            This is a UI placeholder for your future interactive Brand Universe map.
+            In Batch 5/6 we can add canvas / SVG interactivity and tool overlays.
+          </p>
+          <div class="portal-divider"></div>
+          <div class="portal-list">
+            <div class="portal-item"><div><strong>Logo System</strong><br><small>Marks, lockups, spacing rules</small></div><span class="portal-pill">Core</span></div>
+            <div class="portal-item"><div><strong>Colour System</strong><br><small>Palette, contrast, usage</small></div><span class="portal-pill">Core</span></div>
+            <div class="portal-item"><div><strong>Typography</strong><br><small>Display, UI, mono</small></div><span class="portal-pill">Core</span></div>
+            <div class="portal-item"><div><strong>Imagery</strong><br><small>Lighting, framing, texture</small></div><span class="portal-pill">System</span></div>
+          </div>
+        </section>
+
+        <section class="portal-card">
+          <div class="portal-meta">Consistency</div>
+          <h3>Brand Health</h3>
+          <p class="portal-help">Connect this to analytics later (Brand Health score, compliance flags, template usage).</p>
+          <div class="portal-divider"></div>
+          <div class="portal-item"><div><strong>Visual Alignment</strong><br><small>Colour + type consistency</small></div><span class="portal-pill">Good</span></div>
+          <div class="portal-item" style="margin-top:10px;"><div><strong>Asset Usage</strong><br><small>Downloads + templates</small></div><span class="portal-pill">Active</span></div>
+        </section>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="./portal.js"></script>
+</body>
+
+</html>
