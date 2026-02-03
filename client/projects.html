@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — VISIVA® Client Portal</title>
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="./portal.css" />
+  <link rel="manifest" href="../manifest.json" />
+  <link rel="icon" href="../icons/icon-192.png" />
+</head>
+
+<body>
+
+  <div class="portal-shell">
+
+    <aside class="portal-sidebar">
+      <div class="portal-brand">
+        <div class="logo">VISIVA® PORTAL</div>
+        <div class="portal-badge">Client</div>
+      </div>
+
+      <div class="portal-section-title">Core</div>
+      <nav class="portal-nav">
+        <a class="portal-link" href="dashboard.html">Dashboard</a>
+        <a class="portal-link" href="projects.html">Projects</a>
+        <a class="portal-link" href="assets.html">Assets</a>
+        <a class="portal-link" href="downloads.html">Downloads</a>
+      </nav>
+
+      <div class="portal-section-title">Brand</div>
+      <nav class="portal-nav">
+        <a class="portal-link" href="brand-universe.html">Brand Universe</a>
+        <a class="portal-link" href="settings.html">Settings</a>
+      </nav>
+
+      <div class="portal-divider"></div>
+      <a class="portal-link" href="../index.html">← Back to Website</a>
+    </aside>
+
+    <main class="portal-main">
+
+      <div class="portal-topbar">
+        <div>
+          <div class="portal-title">Projects</div>
+          <div class="portal-subtitle">Track milestones, approvals, and deliverables across your brand initiatives.</div>
+        </div>
+
+        <div class="portal-actions">
+          <a class="portal-btn" href="assets.html">View Assets</a>
+          <button class="portal-btn primary" id="logoutBtn">Logout</button>
+        </div>
+      </div>
+
+      <section class="portal-card full">
+        <div class="portal-meta">Project List</div>
+        <h3>Your Projects</h3>
+        <div class="portal-list" id="projectsPageList"></div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="./portal.js"></script>
+</body>
+
+</html>
