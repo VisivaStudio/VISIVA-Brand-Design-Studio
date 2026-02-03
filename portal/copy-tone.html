@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Copy Tone Assistant — VISIVA®</title>
+
+  <link rel="stylesheet" href="../tal.css
+  ./tool.css
+  ../manifest.json
+</head>
+<body>
+
+  <div class="portal-shell">
+    <aside class="portal-sidebar">
+      <div class="portal-brand">
+        <div class="logo">VISIVA® PORTAL</div>
+        <div class="portal-badge">Tools</div>
+      </div>
+
+      <div class="portal-section-title">Client</div>
+      <nav class="portal-nav">
+        ../client/dashboard.htmlDashboard</a>
+        ../client/projects.htmlProjects</a>
+        ../client/assets.htmlAssets</a>
+        ../client/downloads.htmlDownloads</a>
+      </nav>
+
+      <div class="portal-section-title">AI & Tools</div>
+      <nav class="portal-nav">
+        brand-dna.htmlBrand DNA Generator</a>
+        logo-optimiser.htmlAI Logo Optimiser</a>
+        copy-tone.htmlAI Copy Tone Assistant</a>
+        color-generator.htmlColour Generator</a>
+        harmoniser.htmlSmart Colour Harmoniser</a>
+        viewer-3d.html3D Logo Viewer</a>
+        bie-dashboard.htmlB.I.E. Dashboard</a>
+      </nav>
+
+      <div class="portal-divider"></div>
+      ../index.html← Back to Website</a>
+    </aside>
+
+    <main class="portal-main">
+      <div class="portal-topbar">
+        <div>
+          <div class="portal-title">AI Copy Tone Assistant</div>
+          <div class="portal-subtitle">Align messaging with brand voice: cinematic, editorial, minimal, or technical.</div>
+        </div>
+        <div class="portal-actions">
+          <button class="portal-btn primary" id="logoutBtn">Logout</button>
+        </div>
+      </div>
+
+      <div class="tool-grid">
+        <section class="tool-panel wide">
+          <h2>Inputs</h2>
+          <p class="hint">Paste draft copy and select a tone. Connect to <code>/api/copy-tone</code> later.</p>
+
+          <div class="tool-row">
+            <select class="portal-select" id="tone">
+              <option>Cinematic</option>
+              <option>Editorial</option>
+              <option>Minimal</option>
+              <option>Luxury</option>
+              <option>Technical</option>
+              <option>Friendly</option>
+            </select>
+            <input class="portal-input" id="aud" placeholder="Audience (e.g., founders, investors, clients)" />
+          </div>
+
+          <textarea class="portal-textarea" id="draft" placeholder="Paste draft copy here…" style="margin-top:12px;"></textarea>
+
+          <div class="tool-actions">
+            <button class="portal-btn primary" id="rewrite">Rewrite</button>
+            <button class="portal-btn" id="export">Export (TXT)</button>
+          </div>
+        </section>
+
+        <section class="tool-panel narrow">
+          <h2>Output</h2>
+          <p class="hint">Tone-aligned preview (demo). </p>
+          <div class="tool-output" id="out">Paste copy and click “Rewrite”.</div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  ./tool.js</script>
+  <script>
+    const out = document.getElementById("out");
+
+    function demoRewrite(text, tone, aud) {
+      const head = `Tone: ${tone}\nAudience: ${aud || "General"}\n\n`;
+      if (!text.trim()) return "Paste copy and click “Rewrite”.";
+      // Minimal demo transformation; real system would call AI endpoint
+      const rules = {
+        Cinematic: s => `A bold system for ambitious brands.\n\n${s}`,
+        Editorial: s => `A considered approach to identity—structured, refined, intentional.\n\n${s}`,
+        Minimal: s => `${s.replace(/\s+/g, " ").trim()}`,
+        Luxury: s => `Crafted with intention. Built to endure.\n\n${s}`,
+        Technical: s => `Objective: brand voice alignment.\n\n${s}`,
+        Friendly: s => `Here’s a clearer, friendlier version:\n\n${s}`
+      };
+      return head + (rulestext : text);
+    }
+
+    document.getElementById("rewrite").addEventListener("click", async () => {
+      const tone = document.getElementById("tone").value;
+      const aud = document.getElementById("aud").value;
+      const draft = document.getElementById("draft").value;
+
+      await VISIVA.callAPI("/api/copy-tone", { tone, aud, draft });
+
+      out.textContent = demoRewrite(draft, tone, aud);
+      VISIVA.toast("Rewrite generated");
+    });
+
+    document.getElementById("export").addEventListener("click", () => {
+      const blob = new Blob([out.textContent], { type: "text/plain" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "VISIVA-Copy-Tone-Output.txt";
+      a.click();
+      URL.revokeObjectURL(a.href);
+      VISIVA.toast("Exported");
+    });
+  </script>
+</body>
+</html>
