@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Logo Optimiser — VISIVA®</title>
+
+  ../css/style.css
+  ../client/portal.css
+  ./tool.css
+  ../manifest.json
+</head>
+<body>
+
+  <div class="portal-shell">
+    <aside class="portal-sidebar">
+      <div class="portal-brand">
+        <div class="logo">VISIVA® PORTAL</div>
+        <div class="portal-badge">Tools</div>
+      </div>
+
+      <div class="portal-section-title">Client</div>
+      <nav class="portal-nav">
+        ../client/dashboard.htmlDashboard</a>
+        ../client/projects.htmlProjects</a>
+        ../client/assets.htmlAssets</a>
+        ../client/downloads.htmlDownloads</a>
+      </nav>
+
+      <div class="portal-section-title">AI & Tools</div>
+      <nav class="portal-nav">
+        brand-dna.htmlBrand DNA Generator</a>
+        logo-optimiser.htmlAI Logo Optimiser</a>
+        copy-tone.htmlAI Copy Tone Assistant</a>
+        color-generator.htmlColour Generator</a>
+        harmoniser.htmlSmart Colour Harmoniser</a>
+        viewer-3d.html3D Logo Viewer</a>
+        bie-dashboard.htmlB.I.E. Dashboard</a>
+      </nav>
+
+      <div class="portal-divider"></div>
+      ../index.html← Back to Website</a>
+    </aside>
+
+    <main class="portal-main">
+      <div class="portal-topbar">
+        <div>
+          <div class="portal-title">AI Logo Optimiser</div>
+          <div class="portal-subtitle">Audit a logo for digital scaling, contrast, and usage quality (UI demo).</div>
+        </div>
+        <div class="portal-actions">
+          <button class="portal-btn primary" id="logoutBtn">Logout</button>
+        </div>
+      </div>
+
+      <div class="tool-grid">
+        <section class="tool-panel wide">
+          <h2>Inputs</h2>
+          <p class="hint">Upload is UI-only. Connect to <code>/api/logo-audit</code> for real analysis.</p>
+
+          <input class="portal-input" id="logoUrl" placeholder="Logo URL (SVG/PNG) — or leave blank for demo" />
+          <select class="portal-select" id="context" style="margin-top:12px;">
+            <option>Digital (Web/App)</option>
+            <option>Print</option>
+            <option>Social Media</option>
+            <option>Packaging</option>
+          </select>
+
+          <div class="tool-actions">
+            <button class="portal-btn primary" id="audit">Run Audit</button>
+            <button class="portal-btn" id="export">Export (TXT)</button>
+          </div>
+        </section>
+
+        <section class="tool-panel narrow">
+          <h2>Audit Output</h2>
+          <p class="hint">Demo scoring + recommendations.</p>
+
+          <div class="tool-kpi">
+            <div class="kpi"><div class="label">Clarity</div><div class="value" id="k1">—</div></div>
+            <div class="kpi"><div class="label">Contrast</div><div class="value" id="k2">—</div></div>
+            <div class="kpi"><div class="label">Scaling</div><div class="value" id="k3">—</div></div>
+          </div>
+
+          <div class="tool-output" id="out" style="margin-top:12px;">Click “Run Audit”.</div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  ./tool.js</script>
+  <script>
+    const out = document.getElementById("out");
+    const k1 = document.getElementById("k1");
+    const k2 = document.getElementById("k2");
+    const k3 = document.getElementById("k3");
+
+    function demoScore() {
+      const r = () => Math.floor(82 + Math.random() * 17);
+      return { clarity: r(), contrast: r(), scaling: r() };
+    }
+
+    document.getElementById("audit").addEventListener("click", async () => {
+      const logoUrl = document.getElementById("logoUrl").value.trim();
+      const context = document.getElementById("context").value;
+
+      await VISIVA.callAPI("/api/logo-audit", { logoUrl, context });
+
+      const s = demoScore();
+      k1.textContent = s.clarity;
+      k2.textContent = s.contrast;
+      k3.textContent = s.scaling;
+
+      out.textContent =
+        `Context: ${context}\n` +
+        `Logo: ${logoUrl || "(demo)"}\n\n` +
+        `Recommendations:\n` +
+        `• Increase clear space around mark for small sizes.\n` +
+        `• Ensure single-color variant maintains recognisability.\n` +
+        `• Validate contrast on dark + light surfaces.\n\n` +
+        `(Connect to /api/logo-audit for real analysis.)`;
+
+      VISIVA.toast("Audit generated");
+    });
+
+    document.getElementById("export").addEventListener("click", () => {
+      const blob = new Blob([out.textContent], { type: "text/plain" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "VISIVA-Logo-Audit.txt";
+      a.click();
+      URL.revokeObjectURL(a.href);
+      VISIVA.toast("Exported");
+    });
+  </script>
+</body>
+</html>
