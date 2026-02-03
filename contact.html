@@ -111,9 +111,25 @@
       document.getElementById("contactForm").style.display = "none";
       document.getElementById("successMsg").style.display = "block";
     });
-  </script>
 
-  /js/app.js</script>
+  /js/app.js
+  import { sendEmail } from "../js/services.js";
+
+document.getElementById("contactForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const data = {
+    name: name.value,
+    email: email.value,
+    company: company.value,
+    message: message.value,
+  };
+
+  await sendEmail(data);
+
+  contactForm.style.display = "none";
+  successMsg.style.display = "block";
+})
   /js/pwa.js</script>
 
 </body>
