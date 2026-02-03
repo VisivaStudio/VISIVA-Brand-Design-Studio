@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Collaboration Rooms — VISIVA® Client Portal</title>
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="./portal.css" />
+  <link rel="manifest" href="../manifest.json" />
+</head>
+
+<body>
+  <div class="portal-shell">
+
+    <!-- SIDEBAR -->
+    <aside class="portal-sidebar">
+      <div class="portal-brand">
+        <div class="logo">VISIVA® PORTAL</div>
+        <div class="portal-badge">Client</div>
+      </div>
+
+      <div class="portal-section-title">Core</div>
+      <nav class="portal-nav">
+        <a class="portal-link" href="dashboard.html">Dashboard</a>
+        <a class="portal-link" href="projects.html">Projects</a>
+        <a class="portal-link" href="assets.html">Assets</a>
+        <a class="portal-link" href="downloads.html">Downloads</a>
+      </nav>
+
+      <div class="portal-section-title">Workspaces</div>
+      <nav class="portal-nav">
+        <a class="portal-link" href="collaboration.html">Collaboration Rooms</a>
+        <a class="portal-link" href="brand-health.html">Brand Health Check</a>
+        <a class="portal-link" href="licensing.html">Legal & Licensing</a>
+        <a class="portal-link" href="sustainability.html">Sustainability</a>
+        <a class="portal-link" href="notifications.html">Notifications</a>
+      </nav>
+
+      <div class="portal-divider"></div>
+      <a class="portal-link" href="../index.html">← Back to Website</a>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="portal-main">
+
+      <div class="portal-topbar">
+        <div>
+          <div class="portal-title">Collaboration Rooms</div>
+          <div class="portal-subtitle">
+            Team chat, tasks, and file sharing per campaign/project — built for approvals and updates. [1](https://onedrive.live.com/personal/72b59963c95882a1/_layouts/15/doc.aspx?resid=7eef7866-44e5-439e-be23-cee1aed6f46e&cid=72b59963c95882a1)
+          </div>
+        </div>
+        <div class="portal-actions">
+          <button class="portal-btn" id="createRoomBtn">New Room</button>
+          <button class="portal-btn primary" id="logoutBtn">Logout</button>
+        </div>
+      </div>
+
+      <div class="portal-grid">
+
+        <!-- Rooms list -->
+        <section class="portal-card narrow">
+          <div class="portal-meta">Rooms</div>
+          <h3>Active Rooms</h3>
+          <div class="portal-list" id="roomsList"></div>
+        </section>
+
+        <!-- Chat -->
+        <section class="portal-card wide">
+          <div class="portal-meta">Chat</div>
+          <h3 id="roomTitle">Select a Room</h3>
+
+          <div id="chatFeed" style="margin-top:12px; display:flex; flex-direction:column; gap:10px;"></div>
+
+          <div class="portal-divider"></div>
+
+          <div style="display:flex; gap:10px; align-items:center;">
+            <input class="portal-input" id="chatInput" placeholder="Write a message…" />
+            <button class="portal-btn primary" id="sendMsgBtn">Send</button>
+          </div>
+
+          <p class="portal-help" style="margin-top:10px;">
+            This chat is stored locally for now (demo). Connect to backend later for real-time threads and tagging. [1](https://onedrive.live.com/personal/72b59963c95882a1/_layouts/15/doc.aspx?resid=7eef7866-44e5-439e-be23-cee1aed6f46e&cid=72b59963c95882a1)
+          </p>
+        </section>
+
+        <!-- Tasks -->
+        <section class="portal-card wide">
+          <div class="portal-meta">Tasks</div>
+          <h3>Milestones & Action Items</h3>
+
+          <div style="display:flex; gap:10px; margin-top:10px;">
+            <input class="portal-input" id="taskInput" placeholder="Add a task (e.g., Approve logo spacing rules)" />
+            <button class="portal-btn" id="addTaskBtn">Add</button>
+          </div>
+
+          <div class="portal-list" id="taskList" style="margin-top:14px;"></div>
+        </section>
+
+        <!-- Files -->
+        <section class="portal-card narrow">
+          <div class="portal-meta">Files</div>
+          <h3>Shared Files</h3>
+
+          <button class="portal-btn" id="addFileBtn">Add File (UI)</button>
+
+          <div class="portal-list" id="fileList" style="margin-top:14px;"></div>
+
+          <p class="portal-help" style="margin-top:10px;">
+            For production: connect to storage (CDN/S3/Supabase Storage) + permissions. [1](https://onedrive.live.com/personal/72b59963c95882a1/_layouts/15/doc.aspx?resid=7eef7866-44e5-439e-be23-cee1aed6f46e&cid=72b59963c95882a1)
+          </p>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="./portal.js"></script>
+  <script src="./collab.js"></script>
+</body>
+</html>
