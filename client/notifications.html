@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notifications — VISIVA® Client Portal</title>
+
+  ../css/style.css
+  ./portal.css
+  ../manifest.json
+</head>
+
+<body>
+  <div class="portal-shell">
+
+    <aside class="portal-sidebar">
+      <div class="portal-brand">
+        <div class="logo">VISIVA® PORTAL</div>
+        <div class="portal-badge">Client</div>
+      </div>
+
+      <div class="portal-section-title">Core</div>
+      <nav class="portal-nav">
+        dashboard.htmlDashboard</a>
+        projects.htmlProjects</a>
+        assets.htmlAssets</a>
+        downloads.htmlDownloads</a>
+      </nav>
+
+      <div class="portal-section-title">Workspaces</div>
+      <nav class="portal-nav">
+        collaboration.htmlCollaboration Rooms</a>
+        brand-health.htmlBrand Health Check</a>
+        licensing.htmlLegal & Licensing</a>
+        sustainability.htmlSustainability</a>
+        notifications.htmlNotifications</a>
+      </nav>
+
+      <div class="portal-divider"></div>
+      ../index.html← Back to Website</a>
+    </aside>
+
+    <main class="portal-main">
+      <div class="portal-topbar">
+        <div>
+          <div class="portal-title">Notifications</div>
+          <div class="portal-subtitle">
+            Approvals, uploads, milestones — delivered as in‑app updates and PWA push events. [1](https://onedrive.live.com/personal/72b59963c95882a1/_layouts/15/doc.aspx?resid=7eef7866-44e5-439e-be23-cee1aed6f46e&cid=72b59963c95882a1)
+          </div>
+        </div>
+        <div class="portal-actions">
+          <button class="portal-btn" id="seedBtn">Add Demo Updates</button>
+          <button class="portal-btn primary" id="logoutBtn">Logout</button>
+        </div>
+      </div>
+
+      <section class="portal-card full">
+        <div class="portal-meta">Feed</div>
+        <h3>Latest</h3>
+        <div class="portal-list" id="notifList"></div>
+      </section>
+
+      <section class="portal-card full">
+        <div class="portal-meta">PWA Push (Shell)</div>
+        <h3>Push Notifications</h3>
+        <p class="portal-help">
+          Push requires a server to send notifications (VAPID). The UI is ready; connect later. [1](https://onedrive.live.com/personal/72b59963c95882a1/_layouts/15/doc.aspx?resid=7eef7866-44e5-439e-be23-cee1aed6f46e&cid=72b59963c95882a1)
+        </p>
+      </section>
+    </main>
+  </div>
+
+  ./portal.js</script>
+  ./notifications.js</script>
+</body>
+</html>
