@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client Login — VISIVA®</title>
+
+  /css/style.css
+  /manifest.json
+  /icons/icon-192.png
+</head>
+
+<body>
+
+  <!-- AUTH WRAPPER -->
+  <section class="section" style="min-height:100vh; display:flex; align-items:center; justify-content:center;">
+
+    <div class="card" style="max-width:420px; width:100%; text-align:center;">
+
+      <h1 class="display-xl accent-line">Client Portal</h1>
+      <p class="body" style="margin-top:16px; opacity:.8;">
+        Access your brand assets, tools, and dashboards.
+      </p>
+
+      <form id="loginForm" style="margin-top:32px; display:flex; flex-direction:column; gap:20px;">
+
+        <input type="email" id="email" placeholder="Email Address" required
+          style="padding:14px; background:#111; border:1px solid #333; color:white; border-radius:var(--radius-md);" />
+
+        <input type="password" id="password" placeholder="Password" required
+          style="padding:14px; background:#111; border:1px solid #333; color:white; border-radius:var(--radius-md);" />
+
+        <button type="submit" class="button button-primary">
+          Log In
+        </button>
+
+      </form>
+
+      <p class="body" style="margin-top:24px; font-size:14px;">
+        Don’t have an account?
+        <a href="register.html" style="color:var(--visiva-gold); text-decoration:none;">
+          Request Access
+        </a>
+      </p>
+
+    </div>
+
+  </section>
+
+  /client/auth/auth.js</script>
+</body>
+</html>
