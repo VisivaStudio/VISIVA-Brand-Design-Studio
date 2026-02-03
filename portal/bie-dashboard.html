@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>B.I.E. Dashboard — VISIVA®</title>
+
+  ../css/style.css
+  ../client/portal.css
+  ./tool.css
+  ../manifest.json
+</head>
+<body>
+
+  <div class="portal-shell">
+    <aside class="portal-sidebar">
+      <div class="portal-brand">
+        <div class="logo">VISIVA® PORTAL</div>
+        <div class="portal-badge">Tools</div>
+      </div>
+
+      <div class="portal-section-title">Client</div>
+      <nav class="portal-nav">
+        ../client/dashboard.htmlDashboard</a>
+        ../client/projects.htmlProjects</a>
+        ../client/assets.htmlAssets</a>
+        ../client/downloads.htmlDownloads</a>
+      </nav>
+
+      <div class="portal-section-title">AI & Tools</div>
+      <nav class="portal-nav">
+        brand-dna.htmlBrand DNA Generator</a>
+        logo-optimiser.htmlAI Logo Optimiser</a>
+        copy-tone.htmlAI Copy Tone Assistant</a>
+        color-generator.htmlColour Generator</a>
+        harmoniser.htmlSmart Colour Harmoniser</a>
+        viewer-3d.html3D Logo Viewer</a>
+        bie-dashboard.htmlB.I.E. Dashboard</a>
+      </nav>
+
+      <div class="portal-divider"></div>
+      ../index.html← Back to Website</a>
+    </aside>
+
+    <main class="portal-main">
+      <div class="portal-topbar">
+        <div>
+          <div class="portal-title">B.I.E. — Brand Intelligence Engine</div>
+          <div class="portal-subtitle">Analytics shell for asset usage, compliance, and brand health scoring (UI demo).</div>
+        </div>
+        <div class="portal-actions">
+          <button class="portal-btn" id="refresh">Refresh</button>
+          <button class="portal-btn primary" id="logoutBtn">Logout</button>
+        </div>
+      </div>
+
+      <div class="tool-grid">
+        <section class="tool-panel full">
+          <h2>Brand Health Overview</h2>
+          <p class="hint">These are demo KPIs. Connect to <code>/api/bie</code> later.</p>
+
+          <div class="tool-kpi">
+            <div class="kpi"><div class="label">Brand Health</div><div class="value" id="bh">—</div></div>
+            <div class="kpi"><div class="label">Compliance</div><div class="value" id="co">—</div></div>
+            <div class="kpi"><div class="label">Asset Usage</div><div class="value" id="au">—</div></div>
+          </div>
+        </section>
+
+        <section class="tool-panel wide">
+          <h2>Insights</h2>
+          <div class="portal-list" id="ins"></div>
+        </section>
+
+        <section class="tool-panel narrow">
+          <h2>Reports</h2>
+          <p class="hint">Export demo report file.</p>
+          <div class="tool-actions">
+            <button class="portal-btn primary" id="export">Export Report (TXT)</button>
+          </div>
+          <div class="tool-output" id="rep" style="margin-top:12px;">Click “Export Report”.</div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  ./tool.js</script>
+  <script>
+    const bh = document.getElementById("bh");
+    const co = document.getElementById("co");
+    const au = document.getElementById("au");
+    const ins = document.getElementById("ins");
+    const rep = document.getElementById("rep");
+
+    function r(min, max){ return Math.floor(min + Math.random() * (max-min)); }
+
+    async function refresh(){
+      await VISIVA.callAPI("/api/bie", { client: "demo" });
+
+      bh.textContent = r(82, 98);
+      co.textContent = r(80, 97);
+      au.textContent = r(70, 96);
+
+      const items = [
+        { t:"Top asset downloaded", d:"Logo Pack — consistent usage across teams" },
+        { t:"Potential issue", d:"Ensure social templates use approved type scale" },
+        { t:"Opportunity", d:"Add campaign palette variant for Q2 launch" }
+      ];
+      ins.innerHTML = items.map(x => `
+        <div class="portal-item">
+          <div><strong>${x.t}</strong><br><small>${x.d}</small></div>
+          <span class="portal-pill">Insight</span>
+        </div>
+      `).join("");
+      VISIVA.toast("Dashboard refreshed");
+    }
+
+    document.getElementById("refresh").addEventListener("click", refresh);
+
+    document.getElementById("export").addEventListener("click", () => {
+      const text =
+        `VISIVA® B.I.E. Report\n\n` +
+        `Brand Health: ${bh.textContent}\nCompliance: ${co.textContent}\nAsset Usage: ${au.textContent}\n\n` +
+        `Insights:\n- Top asset downloaded: Logo Pack\n- Potential issue: Template compliance\n- Opportunity: Campaign palette\n\n` +
+        `(Connect to /api/bie for real analytics.)`;
+      rep.textContent = text;
+
+      const blob = new Blob([text], { type:"text/plain" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "VISIVA-BIE-Report.txt";
+      a.click();
+      URL.revokeObjectURL(a.href);
+      VISIVA.toast("Report exported");
+    });
+
+    refresh();
+  </script>
+</body>
+</html>
