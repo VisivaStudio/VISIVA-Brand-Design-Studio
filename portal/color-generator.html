@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Colour Generator — VISIVA®</title>
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../client/portal.css" />
+  <link rel="stylesheet" href="./tool.css" />
+  <link rel="manifest" href="../manifest.json" />
+</head>
+<body>
+
+  <div class="portal-shell">
+    <aside class="portal-sidebar">
+      <div class="portal-brand">
+        <div class="logo">VISIVA® PORTAL</div>
+        <div class="portal-badge">Tools</div>
+      </div>
+
+      <div class="portal-section-title">Client</div>
+      <nav class="portal-nav">
+        <a class="portal-link" href="../client/dashboard.html">Dashboard</a>
+        <a class="portal-link" href="../client/projects.html">Projects</a>
+        <a class="portal-link" href="../client/assets.html">Assets</a>
+        <a class="portal-link" href="../client/downloads.html">Downloads</a>
+      </nav>
+
+      <div class="portal-section-title">AI & Tools</div>
+      <nav class="portal-nav">
+        <a class="portal-link" href="brand-dna.html">Brand DNA Generator</a>
+        <a class="portal-link" href="logo-optimiser.html">AI Logo Optimiser</a>
+        <a class="portal-link" href="copy-tone.html">AI Copy Tone Assistant</a>
+        <a class="portal-link" href="color-generator.html">Colour Generator</a>
+        <a class="portal-link" href="harmoniser.html">Smart Colour Harmoniser</a>
+        <a class="portal-link" href="viewer-3d.html">3D Logo Viewer</a>
+        <a class="portal-link" href="bie-dashboard.html">B.I.E. Dashboard</a>
+      </nav>
+
+      <div class="portal-divider"></div>
+      <a class="portal-link" href="../index.html">← Back to Website</a>
+    </aside>
+
+    <main class="portal-main">
+      <div class="portal-topbar">
+        <div>
+          <div class="portal-title">Colour Generator</div>
+          <div class="portal-subtitle">Generate mood-based palettes for campaigns and brand systems.</div>
+        </div>
+        <div class="portal-actions">
+          <button class="portal-btn primary" id="logoutBtn">Logout</button>
+        </div>
+      </div>
+
+      <div class="portal-hero">
+        <div class="portal-hero-inner">
+          <div>
+            <h1>Build palettes with mood and intention.</h1>
+            <p>Choose a mood, temperature, and contrast level — then generate a palette preview and export it.</p>
+          </div>
+          <div class="thumb"></div>
+        </div>
+      </div>
+
+      <div class="tool-grid">
+        <section class="tool-panel wide">
+          <h2>Inputs</h2>
+          <p class="hint">Local demo generator. Connect to <code>/api/palette</code> later.</p>
+
+          <div class="tool-row">
+            <select class="portal-select" id="mood">
+              <option value="Cinematic">Cinematic</option>
+              <option value="Luxury">Luxury</option>
+              <option value="Minimal">Minimal</option>
+              <option value="Editorial">Editorial</option>
+              <option value="Tech">Tech</option>
+              <option value="Natural">Natural</option>
+            </select>
+
+            <select class="portal-select" id="contrast">
+              <option value="High">High Contrast</option>
+              <option value="Medium">Medium Contrast</option>
+              <option value="Soft">Soft Contrast</option>
+            </select>
+          </div>
+
+          <div class="tool-row" style="margin-top:12px;">
+            <select class="portal-select" id="temp">
+              <option value="Warm">Warm</option>
+              <option value="Neutral">Neutral</option>
+              <option value="Cool">Cool</option>
+            </select>
+
+            <input class="portal-input" id="seed" placeholder="Optional seed word (e.g., prestige, calm, electric)" />
+          </div>
+
+          <div class="tool-actions">
+            <button class="portal-btn primary" id="gen">Generate Palette</button>
+            <button class="portal-btn" id="export">Export (TXT)</button>
+          </div>
+        </section>
+
+        <section class="tool-panel narrow">
+          <h2>Palette Preview</h2>
+          <p class="hint">Hex values + blocks.</p>
+
+          <div id="swatches" style="display:grid; grid-template-columns:repeat(2,1fr); gap:10px;"></div>
+          <div class="tool-output" id="out" style="margin-top:12px;">Click “Generate Palette”.</div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="./tool.js"></script>
+  <script>
+    const swatches = document.getElementById("swatches");
+    const out = document.getElementById("out");
+
+    function demoPalette(mood, contrast, temp) {
+      // Simple deterministic sets (demo only)
+      const base = {
+        Cinematic: ["#0E0E0E", "#000000", "#C7A76A", "#F5F5F5", "#1A1A1A", "#FFFFFF"],
+        Luxury: ["#0B0B0B", "#121212", "#C7A76A", "#EFE7DA", "#2B2B2B", "#FFFFFF"],
+        Minimal: ["#000000", "#0A0A0A", "#FFFFFF", "#F5F5F5", "#2B2B2B", "#C7A76A"],
+        Editorial: ["#0E0E0E", "#111111", "#C7A76A", "#EDEDED", "#3A3A3A", "#FFFFFF"],
+        Tech: ["#0B0B0B", "#141414", "#0066FF", "#C7A76A", "#EDEDED", "#FFFFFF"],
+        Natural: ["#0E0E0E", "#1A1A1A", "#C7A76A", "#B8C09A", "#F5F5F5", "#FFFFFF"]
+      }[mood] || ["#0E0E0E","#1A1A1A","#C7A76A","#F5F5F5","#2B2B2B","#FFFFFF"];
+
+      // Contrast tweak (demo)
+      if (contrast === "Soft") base[1] = "#1A1A1A";
+      if (temp === "Cool") base[2] = (mood === "Tech" ? "#0066FF" : "#7AA6FF");
+      if (temp === "Warm") base[2] = "#C7A76A";
+
+      return base;
+    }
+
+    function renderPalette(pal) {
+      swatches.innerHTML = "";
+      pal.forEach(hex => {
+        const d = document.createElement("div");
+        d.style.height = "64px";
+        d.style.borderRadius = "12px";
+        d.style.border = "1px solid rgba(255,255,255,0.10)";
+        d.style.background = hex;
+        d.title = hex;
+        swatches.appendChild(d);
+      });
+      out.textContent = pal.join("\n");
+    }
+
+    document.getElementById("gen").addEventListener("click", async () => {
+      const mood = document.getElementById("mood").value;
+      const contrast = document.getElementById("contrast").value;
+      const temp = document.getElementById("temp").value;
+      const seed = document.getElementById("seed").value;
+
+      await VISIVA.callAPI("/api/palette", { mood, contrast, temp, seed });
+
+      const pal = demoPalette(mood, contrast, temp);
+      renderPalette(pal);
+      VISIVA.toast("Palette generated");
+    });
+
+    document.getElementById("export").addEventListener("click", () => {
+      const blob = new Blob([out.textContent], { type: "text/plain" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "VISIVA-Palette.txt";
+      a.click();
+      URL.revokeObjectURL(a.href);
+      VISIVA.toast("Exported palette");
+    });
+  </script>
+</body>
+</html>
