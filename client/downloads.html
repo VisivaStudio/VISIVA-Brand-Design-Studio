@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Downloads — VISIVA® Client Portal</title>
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="./portal.css" />
+  <link rel="manifest" href="../manifest.json" />
+  <link rel="icon" href="../icons/icon-192.png" />
+</head>
+
+<body>
+
+  <div class="portal-shell">
+
+    <aside class="portal-sidebar">
+      <div class="portal-brand">
+        <div class="logo">VISIVA® PORTAL</div>
+        <div class="portal-badge">Client</div>
+      </div>
+
+      <div class="portal-section-title">Core</div>
+      <nav class="portal-nav">
+        <a class="portal-link" href="dashboard.html">Dashboard</a>
+        <a class="portal-link" href="projects.html">Projects</a>
+        <a class="portal-link" href="assets.html">Assets</a>
+        <a class="portal-link" href="downloads.html">Downloads</a>
+      </nav>
+
+      <div class="portal-section-title">Brand</div>
+      <nav class="portal-nav">
+        <a class="portal-link" href="brand-universe.html">Brand Universe</a>
+        <a class="portal-link" href="settings.html">Settings</a>
+      </nav>
+
+      <div class="portal-divider"></div>
+      <a class="portal-link" href="../index.html">← Back to Website</a>
+    </aside>
+
+    <main class="portal-main">
+
+      <div class="portal-topbar">
+        <div>
+          <div class="portal-title">Downloads</div>
+          <div class="portal-subtitle">Download brand assets, guidelines, and templates — always the latest version.</div>
+        </div>
+
+        <div class="portal-actions">
+          <a class="portal-btn" href="assets.html">View Assets</a>
+          <button class="portal-btn primary" id="logoutBtn">Logout</button>
+        </div>
+      </div>
+
+      <section class="portal-card full">
+        <div class="portal-meta">Download Center</div>
+        <h3>Files</h3>
+
+        <div class="portal-help">
+          Add real files to: <code>/assets/downloads/</code> and keep the same filenames used here.
+        </div>
+
+        <div class="portal-list" id="downloadsPageList" style="margin-top:14px;"></div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="./portal.js"></script>
+</body>
+
+</html>
