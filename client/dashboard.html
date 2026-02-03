@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client Dashboard — VISIVA®</title>
+
+  <!-- Use your global styles (Batch 1) -->
+  <link rel="stylesheet" href="../css/style.css" />
+  <!-- Portal layout -->
+  <link rel="stylesheet" href="./portal.css" />
+
+  <link rel="manifest" href="../manifest.json" />
+  <link rel="icon" href="../icons/icon-192.png" />
+</head>
+
+<body>
+
+  <div class="portal-shell">
+
+    <!-- SIDEBAR -->
+    <aside class="portal-sidebar">
+      <div class="portal-brand">
+        <div class="logo">VISIVA® PORTAL</div>
+        <div class="portal-badge">Client</div>
+      </div>
+
+      <div class="portal-section-title">Core</div>
+      <nav class="portal-nav">
+        <a class="portal-link" href="dashboard.html">Dashboard</a>
+        <a class="portal-link" href="projects.html">Projects</a>
+        <a class="portal-link" href="assets.html">Assets</a>
+        <a class="portal-link" href="downloads.html">Downloads</a>
+      </nav>
+
+      <div class="portal-section-title">Brand</div>
+      <nav class="portal-nav">
+        <a class="portal-link" href="brand-universe.html">Brand Universe</a>
+        <a class="portal-link" href="settings.html">Settings</a>
+      </nav>
+
+      <div class="portal-divider"></div>
+      <a class="portal-link" href="../index.html">← Back to Website</a>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="portal-main">
+
+      <div class="portal-topbar">
+        <div>
+          <div class="portal-title">Dashboard</div>
+          <div class="portal-subtitle">Your brand workspace — projects, assets, downloads, and updates in one place.</div>
+        </div>
+
+        <div class="portal-actions">
+          <a class="portal-btn" href="downloads.html">Quick Downloads</a>
+          <button class="portal-btn primary" id="logoutBtn">Logout</button>
+        </div>
+      </div>
+
+      <div class="portal-grid">
+
+        <section class="portal-card wide">
+          <div class="portal-meta">Projects</div>
+          <h3>Active Workstreams</h3>
+          <div class="portal-list" id="projectList"></div>
+        </section>
+
+        <section class="portal-card">
+          <div class="portal-meta">Notifications</div>
+          <h3>Latest Updates</h3>
+          <div class="portal-list" id="notificationList"></div>
+        </section>
+
+        <section class="portal-card wide">
+          <div class="portal-meta">Assets</div>
+          <h3>Brand System Components</h3>
+          <div class="portal-list" id="assetList"></div>
+        </section>
+
+        <section class="portal-card">
+          <div class="portal-meta">Downloads</div>
+          <h3>Most Used</h3>
+          <div class="portal-list" id="downloadList"></div>
+          <div class="portal-help" style="margin-top:12px;">
+            Put downloadable files inside: <code>/assets/downloads/</code>
+          </div>
+        </section>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <script src="./portal.js"></script>
+</body>
+
+</html>
