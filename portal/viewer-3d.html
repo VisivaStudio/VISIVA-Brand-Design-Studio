@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3D Logo Viewer — VISIVA®</title>
+
+  ../css/style.css
+  ../client/portal.css
+  ./tool.css
+  ../manifest.json
+</head>
+<body>
+
+  <div class="portal-shell">
+    <aside class="portal-sidebar">
+      <div class="portal-brand">
+        <div class="logo">VISIVA® PORTAL</div>
+        <div class="portal-badge">Tools</div>
+      </div>
+
+      <div class="portal-section-title">Client</div>
+      <nav class="portal-nav">
+        ../client/dashboard.htmlDashboard</a>
+        ../client/projects.htmlProjects</a>
+        ../client/assets.htmlAssets</a>
+        ../client/downloads.htmlDownloads</a>
+      </nav>
+
+      <div class="portal-section-title">AI & Tools</div>
+      <nav class="portal-nav">
+        brand-dna.htmlBrand DNA Generator</a>
+        logo-optimiser.htmlAI Logo Optimiser</a>
+        copy-tone.htmlAI Copy Tone Assistant</a>
+        color-generator.htmlColour Generator</a>
+        harmoniser.htmlSmart Colour Harmoniser</a>
+        viewer-3d.html3D Logo Viewer</a>
+        bie-dashboard.htmlB.I.E. Dashboard</a>
+      </nav>
+
+      <div class="portal-divider"></div>
+      ../index.html← Back to Website</a>
+    </aside>
+
+    <main class="portal-main">
+      <div class="portal-topbar">
+        <div>
+          <div class="portal-title">3D Logo Viewer (Shell)</div>
+          <div class="portal-subtitle">UI placeholder for interactive lighting, rotation, and material previews.</div>
+        </div>
+        <div class="portal-actions">
+          <button class="portal-btn primary" id="logoutBtn">Logout</button>
+        </div>
+      </div>
+
+      <div class="tool-grid">
+        <section class="tool-panel wide">
+          <h2>Viewer Area</h2>
+          <p class="hint">Add a 3D engine later (Three.js / model-viewer). UI is ready.</p>
+
+          <div style="
+            height: 420px;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.10);
+            background: radial-gradient(circle at 40% 30%, rgba(199,167,106,0.16), transparent 55%),
+                        linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.65));
+            display:flex; align-items:center; justify-content:center;
+            color: rgba(255,255,255,0.75);
+            font-family: var(--font-mono, monospace);
+            letter-spacing: .12em;
+            text-transform: uppercase;
+          ">
+            3D VIEWPORT PLACEHOLDER
+          </div>
+        </section>
+
+        <section class="tool-panel narrow">
+          <h2>Controls</h2>
+          <p class="hint">These controls will map to the 3D engine later.</p>
+
+          <label class="portal-help">Lighting</label>
+          <select class="portal-select" id="light">
+            <option>Hard Directional</option>
+            <option>Soft Studio</option>
+            <option>High Contrast</option>
+            <option>Ambient</option>
+          </select>
+
+          <label class="portal-help" style="margin-top:12px;">Material</label>
+          <select class="portal-select" id="mat">
+            <option>Matte</option>
+            <option>Gloss</option>
+            <option>Metallic</option>
+            <option>Glass</option>
+          </select>
+
+          <div class="tool-actions">
+            <button class="portal-btn primary" id="apply">Apply (UI)</button>
+          </div>
+
+          <div class="tool-output" id="out" style="margin-top:12px;">Adjust controls and click “Apply”.</div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  ./tool.js</script>
+  <script>
+    document.getElementById("apply").addEventListener("click", () => {
+      const light = document.getElementById("light").value;
+      const mat = document.getElementById("mat").value;
+      document.getElementById("out").textContent =
+        `Lighting: ${light}\nMaterial: ${mat}\n\n(Connect to a 3D engine in the next step.)`;
+      VISIVA.toast("Controls applied (UI)");
+    });
+  </script>
+</body>
+</html>
