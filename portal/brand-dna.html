@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brand DNA Generator — VISIVA®</title>
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../client/portal.css" />
+  <link rel="stylesheet" href="./tool.css" />
+
+  <link rel="manifest" href="../manifest.json" />
+</head>
+<body>
+
+  <div class="portal-shell">
+    <!-- SIDEBAR -->
+    <aside class="portal-sidebar">
+      <div class="portal-brand">
+        <div class="logo">VISIVA® PORTAL</div>
+        <div class="portal-badge">Tools</div>
+      </div>
+
+      <div class="portal-section-title">Client</div>
+      <nav class="portal-nav">
+        <a class="portal-link" href="../client/dashboard.html">Dashboard</a>
+        <a class="portal-link" href="../client/projects.html">Projects</a>
+        <a class="portal-link" href="../client/assets.html">Assets</a>
+        <a class="portal-link" href="../client/downloads.html">Downloads</a>
+      </nav>
+
+      <div class="portal-section-title">AI & Tools</div>
+      <nav class="portal-nav">
+        <a class="portal-link" href="brand-dna.html">Brand DNA Generator</a>
+        <a class="portal-link" href="logo-optimiser.html">AI Logo Optimiser</a>
+        <a class="portal-link" href="copy-tone.html">AI Copy Tone Assistant</a>
+        <a class="portal-link" href="color-generator.html">Colour Generator</a>
+        <a class="portal-link" href="harmoniser.html">Smart Colour Harmoniser</a>
+        <a class="portal-link" href="viewer-3d.html">3D Logo Viewer</a>
+        <a class="portal-link" href="bie-dashboard.html">B.I.E. Dashboard</a>
+      </nav>
+
+      <div class="portal-divider"></div>
+      <a class="portal-link" href="../index.html">← Back to Website</a>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="portal-main">
+
+      <div class="portal-topbar">
+        <div>
+          <div class="portal-title">Brand DNA Generator</div>
+          <div class="portal-subtitle">Define mission, tone, archetype, and personality — then export a Brand DNA Blueprint.</div>
+        </div>
+        <div class="portal-actions">
+          <button class="portal-btn primary" id="logoutBtn">Logout</button>
+        </div>
+      </div>
+
+      <div class="portal-hero">
+        <div class="portal-hero-inner">
+          <div>
+            <h1>Define the essence of your brand.</h1>
+            <p>Complete the guided prompts below to generate a Brand DNA Blueprint you can align with your kit, copy, and visuals.</p>
+          </div>
+          <div class="thumb" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <div class="tool-grid">
+
+        <section class="tool-panel wide">
+          <h2>Inputs</h2>
+          <p class="hint">These inputs generate a structured blueprint. In production, connect to <code>/api/dna</code>.</p>
+
+          <div class="tool-row">
+            <input class="portal-input" id="dna_brand" placeholder="Brand Name (e.g., EcoLux Beauty)" />
+            <input class="portal-input" id="dna_market" placeholder="Market / Category (e.g., Skincare, SaaS)" />
+          </div>
+
+          <div class="tool-row" style="margin-top:12px;">
+            <input class="portal-input" id="dna_mission" placeholder="Mission (short sentence)" />
+            <input class="portal-input" id="dna_vision" placeholder="Vision (short sentence)" />
+          </div>
+
+          <div class="tool-row" style="margin-top:12px;">
+            <select class="portal-select" id="dna_archetype">
+              <option value="">Primary Archetype</option>
+              <option>Creator</option><option>Ruler</option><option>Sage</option><option>Hero</option>
+              <option>Explorer</option><option>Magician</option><option>Caregiver</option><option>Everyman</option>
+              <option>Jester</option><option>Lover</option><option>Innocent</option><option>Outlaw</option>
+            </select>
+            <select class="portal-select" id="dna_tone">
+              <option value="">Voice / Tone</option>
+              <option>Cinematic</option><option>Editorial</option><option>Minimal</option><option>Luxury</option>
+              <option>Technical</option><option>Friendly</option><option>Bold</option><option>Quiet Confident</option>
+            </select>
+          </div>
+
+          <textarea class="portal-textarea" id="dna_values" placeholder="Core Values (comma-separated) — e.g., clarity, craft, ambition" style="margin-top:12px;"></textarea>
+
+          <div class="tool-actions">
+            <button class="portal-btn primary" id="dna_generate">Generate Blueprint</button>
+            <button class="portal-btn" id="dna_export">Export (TXT)</button>
+            <button class="portal-btn" id="dna_clear">Clear</button>
+          </div>
+        </section>
+
+        <section class="tool-panel narrow">
+          <h2>Blueprint Output</h2>
+          <p class="hint">Preview output. Export creates a local TXT download.</p>
+          <div class="tool-output" id="dna_output">Fill in the fields and click “Generate Blueprint”.</div>
+        </section>
+
+        <section class="tool-panel full">
+          <h2>Guidance</h2>
+          <div class="portal-help">
+            • Mission: what you do + for whom + why it matters<br/>
+            • Vision: what future you’re building<br/>
+            • Archetype: your personality “engine”<br/>
+            • Tone: how the brand sounds in public
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="./tool.js"></script>
+  <script>
+    const $ = (id) => document.getElementById(id);
+
+    function buildDNA() {
+      const fields = {
+        "Brand": $("dna_brand").value,
+        "Market": $("dna_market").value,
+        "Mission": $("dna_mission").value,
+        "Vision": $("dna_vision").value,
+        "Archetype": $("dna_archetype").value,
+        "Tone": $("dna_tone").value,
+        "Values": $("dna_values").value
+      };
+      const text = VISIVA.synthesize("Brand DNA Blueprint", fields);
+      $("dna_output").textContent = text;
+      VISIVA.toast("Blueprint generated");
+      return text;
+    }
+
+    $("dna_generate").addEventListener("click", async () => {
+      const payload = {
+        brand: $("dna_brand").value,
+        market: $("dna_market").value,
+        mission: $("dna_mission").value,
+        vision: $("dna_vision").value,
+        archetype: $("dna_archetype").value,
+        tone: $("dna_tone").value,
+        values: $("dna_values").value
+      };
+      // Placeholder API call
+      await VISIVA.callAPI("/api/dna", payload);
+      buildDNA();
+    });
+
+    $("dna_export").addEventListener("click", () => {
+      const text = buildDNA();
+      const blob = new Blob([text], { type: "text/plain" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "VISIVA-Brand-DNA-Blueprint.txt";
+      a.click();
+      URL.revokeObjectURL(a.href);
+      VISIVA.toast("Exported blueprint");
+    });
+
+    $("dna_clear").addEventListener("click", () => {
+      ["dna_brand","dna_market","dna_mission","dna_vision","dna_values"].forEach(id => $(id).value = "");
+      $("dna_archetype").value = "";
+      $("dna_tone").value = "";
+      $("dna_output").textContent = "Fill in the fields and click “Generate Blueprint”.";
+      VISIVA.toast("Cleared");
+    });
+  </script>
+</body>
+</html>
