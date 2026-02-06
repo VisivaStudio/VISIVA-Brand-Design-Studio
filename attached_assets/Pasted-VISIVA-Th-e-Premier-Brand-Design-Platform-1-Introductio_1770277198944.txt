@@ -1,5 +1,7 @@
-VISIVA®: Th e Premier Brand
-Design Platform
+# VISIVA®: The Premier Brand
+
+## Design Platform
+
 1. Introduction & Brand Philosophy
 VISIVA® is a holistic platform committed to the development, management, and
 evolution of unique brand identities. At VISIVA®
