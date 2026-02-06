@@ -1,249 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VISIVA® Brand Design Platform</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VISIVA® Brand Design Studio</title>
 
-  <!-- Global VISIVA CSS -->
+  <!-- Global Styles -->
   /css/style.css
 
-  <!-- Manifest for PWA -->
+  <!-- Manifest -->
   /manifest.json
 
-  <!-- iOS/Android splash icons -->
+  <!-- Icons -->
   /icons/icon-192.png
-
-  <!-- JS -->
-  /js/app.js</script>
-  /js/pwa.js</script>
 </head>
 
 <body>
 
   <!-- ================================
-       NAVIGATION BAR
-       ================================ -->
-  <nav class="navbar">
-    <div style="display:flex; justify-content:space-between; align-items:center;">
-      index.html
-        VISIVA®
-      </a>
+       TRANSPARENT NAVIGATION (Overlay)
+  ================================ -->
+  <nav class="navbar" style="
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      padding:24px 60px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      z-index:50;
+      background:transparent;">
+    
+    index.html
+      VISIVA®
+    </a>
 
-      <div style="display:flex; gap:32px;">
-        index.htmlHome</a>
-        about.htmlAbout</a>
-        brand-kits.htmlBrand Kits</a>
-        pricing.htmlPricing</a>
-        tools.htmlTools</a>
-        testimonials.htmlTestimonials</a>
-        contact.htmlContact</a>
-        https://visiva.co.za/experience-app
-          Experience App
-        </a>
-      </div>
+    <div class="nav-links" style="display:flex; gap:32px;">
+      about.htmlAbout</a>
+      brand-kits.htmlBrand Kits</a>
+      pricing.htmlPricing</a>
+      tools.htmlTools</a>
+      testimonials.htmlTestimonials</a>
+      contact.htmlContact</a>
+      https://visiva.co.za/experience-appExperience App</a>
     </div>
   </nav>
 
   <!-- ================================
-       HERO SECTION
-       ================================ -->
-  <header class="section" style="padding-top:120px; padding-bottom:120px; text-align:center;">
-    <h1 class="display-xxl accent-line fade-up">
-      VISIVA® Brand Design Platform
-    </h1>
+       HERO SECTION (Image 1/6 — Background)
+  ================================ -->
+  <header class="hero" style="
+      width:100%;
+      height:100vh;
+      background:url('/assets/img/image1.jpg') center/cover no-repeat;
+      display:flex;
+      align-items:center;
+      padding:0 60px;
+      color:white;
+      position:relative;">
+    
+    <div style="max-width:720px; z-index:5;">
+      <h1 style="font-size:56px; margin-bottom:20px;">
+        Intelligent Brand Systems for a Connected World
+      </h1>
+      <p style="font-size:18px; opacity:0.9; margin-bottom:40px;">
+        VISIVA® builds future‑ready brand frameworks that combine purpose, insight, and intelligent design.
+      </p>
 
-    <p class="body-lg fade-up" style="animation-delay:.25s; max-width:800px; margin:32px auto;">
-      A complete ecosystem for brands to design, grow, and evolve — powered by clarity,
-      intention, and cinematic identity systems.
-    </p>
-
-    <div style="margin-top:48px;" class="fade-up" style="animation-delay:.35s;">
-      brand-kits.htmlExplore Brand Kits</a>
+      <div style="display:flex; gap:20px;">
+        https://visiva.co.za/experience-appLaunch Experience App</a>
+        tools.htmlExplore VISIVA Tools</a>
+      </div>
     </div>
   </header>
 
-  <section class="section" style="padding-top:100px; padding-bottom:100px;">
-    <h2 class="display-xl accent-line fade-up">1. Introduction & Brand Philosophy</h2>
+  <!-- ================================
+       STUDIO / PROCESS SECTION (Image 2/6)
+  ================================ -->
+  <section class="section" style="padding:100px 0; background:white;">
+    <div class="container" style="max-width:1200px; margin:auto; display:flex; gap:60px; align-items:center;">
+      
+      /assets/img/image2.jpg
 
-    <p class="body-lg fade-up" style="animation-delay:.2s; max-width:900px; margin-top:24px;">
-      VISIVA® is a holistic platform committed to the development, management, and evolution of unique brand identities. At VISIVA®, enduring brands are crafted through clarity, meticulous craftsmanship, and strategic intent. Every design element is purpose-driven, enhancing a unified and impactful brand story.
+      <div style="width:50%;">
+        <h2 style="font-size:40px; margin-bottom:20px;">How VISIVA Works</h2>
+        <p style="line-height:1.7; font-size:18px; margin-bottom:20px;">
+          Our process blends strategic clarity with creative excellence. Every brand framework we build is rooted in insight, structured for scalability, and designed with intention.
+        </p>
+        <p style="line-height:1.7; font-size:18px;">
+          From foundational identity systems to advanced AI‑powered brand tools, VISIVA empowers businesses to unlock their full potential.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================
+       BRAND PHILOSOPHY SECTION (Image 3/6)
+  ================================ -->
+  <section class="section" style="padding:120px 0; background:#f7f7f7; text-align:center;">
+    
+    /assets/img/image3.jpg
+
+    <h2 style="font-size:36px; margin-bottom:20px;">
+      A Design Philosophy Built on Purpose
+    </h2>
+
+    <p style="max-width:700px; margin:auto; font-size:18px; line-height:1.7;">
+      We believe great brands are more than visuals — they are systems that move people, guide experiences,
+      and influence decisions. VISIVA exists to craft those systems with clarity and intention.
     </p>
+  </section>
 
-    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:32px; margin-top:48px;">
-      <div class="fade-up" style="animation-delay:.3s;">
-        <h3 class="heading" style="color:var(--visiva-gold);">Clarity</h3>
-        <p class="body" style="margin-top:12px;">Every design choice is deliberate, reinforcing the brand’s essential message.</p>
-      </div>
-      <div class="fade-up" style="animation-delay:.4s;">
-        <h3 class="heading" style="color:var(--visiva-gold);">Craft</h3>
-        <p class="body" style="margin-top:12px;">Each detail, from typography to layout, upholds the highest standards of excellence.</p>
-      </div>
-      <div class="fade-up" style="animation-delay:.5s;">
-        <h3 class="heading" style="color:var(--visiva-gold);">Ambition</h3>
-        <p class="body" style="margin-top:12px;">Services are tailored for organizations aiming to lead and shape their markets.</p>
+  <!-- ================================
+       DIGITAL PLATFORM SECTION (Image 4/6)
+  ================================ -->
+  <section class="section" style="padding:120px 60px; background:black; color:white;">
+    
+    <div style="max-width:1200px; margin:auto; display:flex; align-items:center; gap:60px;">
+      
+      /assets/img/image4.jpg
+
+      <div style="width:50%;">
+        <h2 style="font-size:40px; margin-bottom:20px;">The VISIVA® Intelligent Brand Platform</h2>
+        
+        <p style="line-height:1.7; font-size:18px; margin-bottom:20px;">
+          Our advanced suite of tools provides real‑time analysis, structured brand logic, and scalable design assets — all powered by intelligent design frameworks.
+        </p>
+
+        <ul style="line-height:1.8; font-size:18px;">
+          <li>AI‑enhanced logo optimization</li>
+          <li>Color systems and harmonization tools</li>
+          <li>Brand DNA and tone‑of‑voice generators</li>
+          <li>3D and immersive brand visualizations</li>
+        </ul>
       </div>
     </div>
   </section>
 
   <!-- ================================
-       CUSTOMER TESTIMONIALS
-       ================================ -->
-  <section class="section" style="background:rgba(255,255,255,0.03); padding-top:100px; padding-bottom:100px;">
-    <h2 class="display-xl accent-line fade-up">2. Customer Testimonials</h2>
+       CREATIVE EXPRESSION SECTION (Image 5/6)
+  ================================ -->
+  <section class="section" style="padding:120px 0; background:white;">
+    <div style="max-width:900px; margin:auto; text-align:center;">
+      
+      <h2 style="font-size:40px; margin-bottom:40px;">
+        The Creative Energy Behind VISIVA®
+      </h2>
 
-    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:48px; margin-top:48px;">
-      <div class="fade-up">
-        <p class="body-lg" style="font-style:italic; opacity:0.9;">“VISIVA® transformed our brand from ordinary to unforgettable. The Natural Kit provided an ideal foundation, beautifully customized to align with our sustainability principles.”</p>
-        <p class="mono" style="margin-top:24px; color:var(--visiva-gold);">— Sarah Mitchell, Founder, EcoLux Beauty</p>
-      </div>
-      <div class="fade-up" style="animation-delay:.1s;">
-        <p class="body-lg" style="font-style:italic; opacity:0.9;">“The Tech Startup Kit equipped us with the modern, innovative edge we needed. Investors immediately recognized the professional presentation. Worth every rand.”</p>
-        <p class="mono" style="margin-top:24px; color:var(--visiva-gold);">— Marcus Chen, CEO, Quantum AI</p>
-      </div>
+      /assets/img/image5.jpg
+
     </div>
   </section>
 
   <!-- ================================
-       OUR DESIGN PROCESS
-       ================================ -->
-  <section class="section" style="padding-top:100px; padding-bottom:100px;">
-    <h2 class="display-xl accent-line fade-up">3. Our Design Process</h2>
+       FINAL CTA SECTION (Image 6/6 — Background)
+  ================================ -->
+  <section class="section" style="
+      padding:160px 60px;
+      background:url('/assets/img/image6.jpg') center/cover no-repeat;
+      text-align:center;
+      color:white;">
+    
+    <h2 style="font-size:48px; margin-bottom:24px;">
+      Build a Brand Experience That Moves People
+    </h2>
 
-    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:24px; margin-top:48px;">
-      <div class="fade-up">
-        <h4 class="mono" style="color:var(--visiva-gold);">01. Discovery Call</h4>
-        <p class="body-sm" style="margin-top:8px;">Initial consultation to grasp brand vision and requirements.</p>
-      </div>
-      <div class="fade-up" style="animation-delay:.1s;">
-        <h4 class="mono" style="color:var(--visiva-gold);">02. Proposal & Onboarding</h4>
-        <p class="body-sm" style="margin-top:8px;">Detailed proposal and project initiation upon approval and deposit.</p>
-      </div>
-      <div class="fade-up" style="animation-delay:.2s;">
-        <h4 class="mono" style="color:var(--visiva-gold);">03. Concept Development</h4>
-        <p class="body-sm" style="margin-top:8px;">Generation of initial brand concepts and design directions.</p>
-      </div>
-      <div class="fade-up" style="animation-delay:.3s;">
-        <h4 class="mono" style="color:var(--visiva-gold);">04. Feedback & Iteration</h4>
-        <p class="body-sm" style="margin-top:8px;">Review and refinement through iterative cycles.</p>
-      </div>
-      <div class="fade-up" style="animation-delay:.4s;">
-        <h4 class="mono" style="color:var(--visiva-gold);">05. Final Delivery</h4>
-        <p class="body-sm" style="margin-top:8px;">Handover of all brand assets and guidelines.</p>
-      </div>
-      <div class="fade-up" style="animation-delay:.5s;">
-        <h4 class="mono" style="color:var(--visiva-gold);">06. Support & Aftercare</h4>
-        <p class="body-sm" style="margin-top:8px;">Ongoing assistance and optional retainer packages.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================================
-       BRAND KITS PREVIEW
-       ================================ -->
-  <section class="section">
-    <h2 class="display-xl accent-line fade-up">Brand Kits</h2>
-
-    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:32px; margin-top:48px;">
-      <div class="card fade-up">
-        <h3 class="heading">Tech Startup Kit</h3>
-        <p class="body" style="margin-top:16px;">Modern, scalable identity systems for fast-growing companies.</p>
-        brand-kits.htmlView Kit</a>
-      </div>
-
-      <div class="card fade-up" style="animation-delay:.1s;">
-        <h3 class="heading">Luxury Brand Kit</h3>
-        <p class="body" style="margin-top:16px;">Cinematic elegance with timeless sophistication.</p>
-        brand-kits.htmlView Kit</a>
-      </div>
-
-      <div class="card fade-up" style="animation-delay:.2s;">
-        <h3 class="heading">Creative Agency Kit</h3>
-        <p class="body" style="margin-top:16px;">Bold, expressive, and crafted for visual storytellers.</p>
-        brand-kits.htmlView Kit</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================================
-       TOOLS PREVIEW
-       ================================ -->
-  <section class="section">
-    <h2 class="display-xl accent-line fade-up">Interactive Tools</h2>
-
-    <p class="body-lg fade-up" style="animation-delay:.2s; max-width:900px; margin-top:24px;">
-      VISIVA® provides a suite of intelligent tools — from colour systems to AI-driven insights —
-      to elevate your brand consistency and performance.
-    </p>
-
-    <div style="display:flex; gap:32px; flex-wrap:wrap; margin-top:48px;">
-      <div class="card fade-up">
-        <h3 class="heading">AI Logo Optimiser</h3>
-        <p class="body" style="margin-top:16px;">Enhance clarity, scaling, and visual integrity.</p>
-      </div>
-
-      <div class="card fade-up" style="animation-delay:.1s;">
-        <h3 class="heading">Colour Harmoniser</h3>
-        <p class="body" style="margin-top:16px;">Generate perfectly balanced palette systems.</p>
-      </div>
-
-      <div class="card fade-up" style="animation-delay:.2s;">
-        <h3 class="heading">Brand Universe Map</h3>
-        <p class="body" style="margin-top:16px;">Visualise your entire brand ecosystem.</p>
-      </div>
-    </div>
-
-    tools.htmlExplore Tools</a>
-  </section>
-
-  <!-- ================================
-       TESTIMONIALS TEASER
-       ================================ -->
-  <section class="section">
-    <h2 class="display-xl accent-line fade-up">What Clients Say</h2>
-
-    <p class="body-lg fade-up" style="animation-delay:.2s; max-width:900px; margin-top:24px;">
-      Real stories from real founders who transformed their brands with VISIVA®.
-    </p>
-
-    <div class="fade-up" style="margin-top:36px;">
-      testimonials.htmlRead Testimonials</a>
-    </div>
-  </section>
-
-  <!-- ================================
-       WHY VISIVA (VALUE PROP)
-       ================================ -->
-  <section class="section">
-    <h2 class="display-xl accent-line fade-up">Why VISIVA?</h2>
-
-    <ul class="body-lg fade-up" style="animation-delay:.2s; max-width:900px; margin-top:24px; line-height:1.9;">
-      <li>End-to-end brand ecosystem</li>
-      <li>Cinematic + strategic design systems</li>
-      <li>Interactive tools and AI intelligence</li>
-      <li>Client portal with live updates and collaboration</li>
-      <li>Future-ready tech: AR/VR, blockchain, analytics</li>
-    </ul>
+    contact.html
+      Start Your Project
+    </a>
   </section>
 
   <!-- ================================
        FOOTER
-       ================================ -->
-  <footer class="section" style="text-align:center; border-top:1px solid rgba(255,255,255,0.1);">
-    <p class="mono" style="color:var(--visiva-gold); margin-bottom:16px;">VISIVA® Brand Design Studio</p>
+  ================================ -->
+  <footer class="footer" style="padding:60px; text-align:center; background:black; color:white;">
+    <p>VISIVA® Brand Design Studio</p>
 
-    <p class="body" style="opacity:.7;">info@visiva.co.za</p>
-    <p class="body" style="opacity:.7;">+27 66 220 8586</p>
-
-    <div style="margin-top:16px; display:flex; gap:24px; justify-content:center;">
+    <div style="margin:20px 0;">
       https://instagram.com/visivaInstagram</a>
       https://linkedin.com/company/visivaLinkedIn</a>
       https://visiva.siteWebsite</a>
     </div>
 
-    <p class="mono" style="margin-top:24px; opacity:.4; font-size:12px;">© 2025 VISIVA®. All Rights Reserved.</p>
+    <p>© 2024 VISIVA®. All Rights Reserved.</p>
   </footer>
+
+  /js/app.js</script>
+  /js/pwa.js</script>
 
 </body>
 </html>
+
